@@ -44,7 +44,7 @@ class Folders extends Issuu
      * @param  string  $responseParams Comma-separated list of response parameters to be returned.
      * @return object
      */
-    function list(
+    public function list(
         $resultOrder = 'asc',
         $startIndex = 0,
         $pageSize = 10,

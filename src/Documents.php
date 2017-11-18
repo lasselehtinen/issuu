@@ -167,7 +167,7 @@ class Documents extends Issuu
      * @param  string  $responseParams Comma-separated list of response parameters to be returned.
      * @return object
      */
-    function list(
+    public function list(
         $documentStates = null,
         $access = null,
         $origins = null,
