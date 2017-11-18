@@ -1,6 +1,6 @@
 {
     "name": "lasselehtinen/issuu",
-    "description": "Issuu API client",
+    "description": "Issuu API client for PHP",
     "type": "library",
     "license": "MIT",
     "authors": [
