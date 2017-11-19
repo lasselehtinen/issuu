@@ -1,4 +1,4 @@
-[![Latest Version](https://img.shields.io/github/release/lasselehtinen/issuu.svg?style=flat-square)](https://github.com/lasselehtinen/issuu/releases)
+[![Latest Version](https://img.shields.io/packagist/v/lasselehtinen/issuu.svg)](https://github.com/lasselehtinen/issuu/releases)
 [![Build Status](https://img.shields.io/travis/lasselehtinen/issuu/master.svg?style=flat-square)](https://travis-ci.org/lasselehtinen/issuu)
 [![Quality Score](https://img.shields.io/scrutinizer/g/lasselehtinen/issuu.svg?style=flat-square)](https://scrutinizer-ci.com/g/lasselehtinen/issuu)
 [![StyleCI](https://styleci.io/repos/111231767/shield)](https://styleci.io/repos/111231767)
