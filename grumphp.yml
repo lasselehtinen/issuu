@@ -1,0 +1,26 @@
+# grumphp.yml
+parameters:
+    bin_dir: "./vendor/bin"
+    git_dir: "."
+    hooks_dir: ~
+    hooks_preset: local
+    stop_on_failure: true
+    ignore_unstaged_changes: false
+    process_timeout: 420
+    ascii:
+        failed: ~
+        succeeded: ~
+    tasks:
+        composer:
+        securitychecker:
+        phpunit:
+            config_file: ~
+        phpcs:
+            standard: PSR2
+            show_warnings: false
+            tab_width: 4
+            triggered_by: [php]
+            ignore_patterns:
+                - "vendor*"
+                - "tests*"
+    extensions: []
