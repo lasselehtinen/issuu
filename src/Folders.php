@@ -2,7 +2,7 @@
 
 namespace lasselehtinen\Issuu;
 
-class Folders extends Issuu
+class Folders
 {
     /**
      * Issuu instance

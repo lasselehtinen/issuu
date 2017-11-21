@@ -2,7 +2,7 @@
 
 namespace lasselehtinen\Issuu;
 
-class Bookmarks extends Issuu
+class Bookmarks
 {
     /**
      * Issuu instance

@@ -4,7 +4,7 @@ namespace lasselehtinen\Issuu;
 
 use lasselehtinen\Issuu\Exceptions\FileDoesNotExist;
 
-class Documents extends Issuu
+class Documents
 {
     /**
      * Issuu instance
