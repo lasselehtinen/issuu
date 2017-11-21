@@ -16,7 +16,7 @@ First create a new instance with your API key and secret:
 ```php
 use lasselehtinen\Issuu\Issuu;
 
-$issuu = new Issuu('apikey', 'apisecret');
+$issuu = new Issuu('apiSecret', 'apiKey');
 ```
 
 ### Bookmarks
