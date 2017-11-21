@@ -3,6 +3,7 @@ namespace lasselehtinen\Issuu\Test;
 
 use lasselehtinen\Issuu\Issuu;
 use PHPUnit\Framework\TestCase;
+use ReflectionClass;
 
 class SignatureTest extends TestCase
 {
@@ -23,6 +24,12 @@ class SignatureTest extends TestCase
             'format' => 'json',
         ];
 
-        $this->assertSame('7431d31140cf412ab5caa73586d6324a', $issuu->getSignature($parameters));
+        // Create new ReflectionClass to test private method
+        $reflection = new ReflectionClass(get_class($issuu));
+        $method = $reflection->getMethod('getSignature');
+        $method->setAccessible(true);
+        $signature = $method->invokeArgs($issuu, [$parameters]);
+
+        $this->assertSame('7431d31140cf412ab5caa73586d6324a', $signature);
     }
 }

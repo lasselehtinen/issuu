@@ -49,7 +49,7 @@ class Issuu
      * @param  array $queryParameters
      * @return string
      */
-    public function getSignature($queryParameters)
+    private function getSignature($queryParameters)
     {
         // Sort request parameters alphabetically
         ksort($queryParameters);
