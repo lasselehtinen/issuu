@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace lasselehtinen\Issuu;
 
@@ -14,28 +15,20 @@ use lasselehtinen\Issuu\Exceptions\InvalidApiKey;
 use lasselehtinen\Issuu\Exceptions\InvalidFieldFormat;
 use lasselehtinen\Issuu\Exceptions\PageNotFound;
 use lasselehtinen\Issuu\Exceptions\RequiredFieldIsMissing;
+use stdClass;
 
 class Issuu
 {
-    /**
-     * Issuu ApiSecret
-     * @var string
-     */
+    /** @var string */
     private $apiSecret;
 
-    /**
-     * Issuu ApiKey
-     * @var string
-     */
+    /** @var string */
     private $apiKey;
 
-    /**
-     * Guzzle instance
-     * @var Client
-     */
+    /** @var Client */
     private $client;
 
-    public function __construct($apiSecret, $apiKey, Client $client = null)
+    public function __construct(string $apiSecret, string $apiKey, Client $client = null)
     {
         $this->apiSecret = $apiSecret;
         $this->apiKey = $apiKey;
@@ -49,14 +42,14 @@ class Issuu
      * @param  array $queryParameters
      * @return string
      */
-    private function getSignature($queryParameters)
+    private function getSignature(array $queryParameters): string
     {
         // Sort request parameters alphabetically
         ksort($queryParameters);
 
-        // Concatenate in order your API secret key and request name-value pairs (e.g. SECRETbar2baz3foo1)
         $signature = $this->apiSecret;
 
+        // Concatenate in order your API secret key and request name-value pairs (e.g. SECRETbar2baz3foo1)
         foreach ($queryParameters as $key => $value) {
             $signature .= $key . $value;
         }
@@ -64,9 +57,8 @@ class Issuu
         return md5($signature);
     }
 
-    public function getResponse($queryParameters)
+    public function getResponse(array $queryParameters): stdClass
     {
-        // Add Issuu API key
         $queryParameters['apiKey'] = $this->apiKey;
 
         // Force format to JSON
@@ -74,15 +66,10 @@ class Issuu
 
         // Remove null/empty parameters
         $queryParameters = array_filter($queryParameters);
-
-        // Add signature
         $queryParameters['signature'] = $this->getSignature($queryParameters);
-
-        // Get response
         $response = $this->client->post('http://api.issuu.com/1_0', [
             'query' => $queryParameters,
         ]);
-
         $json = json_decode($response->getBody()->getContents());
 
         // Check for errors
@@ -127,12 +114,12 @@ class Issuu
         return $json;
     }
 
-    public function responseHasErrors($json)
+    public function responseHasErrors(stdClass $json): bool
     {
         return isset($json->rsp->_content->error);
     }
 
-    public function getErrorCode($json)
+    public function getErrorCode(stdClass $json): string
     {
         return $json->rsp->_content->error->code;
     }

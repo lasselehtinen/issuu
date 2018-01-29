@@ -1,15 +1,14 @@
 <?php
+declare(strict_types=1);
 
 namespace lasselehtinen\Issuu;
 
 use lasselehtinen\Issuu\Exceptions\FileDoesNotExist;
+use stdClass;
 
 class Documents
 {
-    /**
-     * Issuu instance
-     * @var Issuu
-     */
+    /** @var Issuu */
     private $issuu;
 
     public function __construct(Issuu $issuu)
@@ -36,26 +35,26 @@ class Documents
      * @param  boolean $ratingAllowed   Can other people rate this document?
      * @param  string  $publishDate     Datetime when this document was originally published. Default is at the time of upload. See http://developers.issuu.com/managing-your-publications/date-and-time-formats/ for formatting rules
      * @param  string  $folderIds       Folders to copy the document to when processing is done. Use method Folders list to find the id of a specific folder - See http://developers.issuu.com/managing-your-publications/folders/list/
-     * @return object
+     * @return stdClass
      */
     public function upload(
-        $file,
-        $name = null,
-        $title = null,
-        $tags = null,
-        $commentsAllowed = true,
-        $description = null,
-        $downloadable = false,
-        $infoLink = null,
-        $language = null,
-        $access = 'public',
-        $explicit = false,
-        $category = null,
-        $type = null,
-        $ratingAllowed = true,
-        $publishDate = null,
-        $folderIds = null
-    ) {
+        string $file,
+        string $name = null,
+        string $title = null,
+        string $tags = null,
+        bool $commentsAllowed = true,
+        string $description = null,
+        bool $downloadable = false,
+        string $infoLink = null,
+        string $language = null,
+        string $access = 'public',
+        bool $explicit = false,
+        string $category = null,
+        string $type = null,
+        bool $ratingAllowed = true,
+        string $publishDate = null,
+        string $folderIds = null
+    ): stdClass {
         // Check that file exists
         if (!file_exists($file)) {
             throw new FileDoesNotExist();
@@ -106,26 +105,26 @@ class Documents
      * @param  boolean $ratingAllowed   Can other people rate this document?
      * @param  string  $publishDate     Datetime when this document was originally published. Default is at the time of upload. See http://developers.issuu.com/managing-your-publications/date-and-time-formats/ for formatting rules
      * @param  string  $folderIds       Folders to copy the document to when processing is done. Use method Folders list to find the id of a specific folder - See http://developers.issuu.com/managing-your-publications/folders/list/
-     * @return object
+     * @return stdClass
      */
     public function urlUpload(
-        $slurpUrl,
-        $name = null,
-        $title = null,
-        $tags = null,
-        $commentsAllowed = true,
-        $description = null,
-        $downloadable = false,
-        $infoLink = null,
-        $language = null,
-        $access = 'public',
-        $explicit = false,
-        $category = null,
-        $type = null,
-        $ratingAllowed = true,
-        $publishDate = null,
-        $folderIds = null
-    ) {
+        string $slurpUrl,
+        string $name = null,
+        string $title = null,
+        string $tags = null,
+        bool $commentsAllowed = true,
+        string $description = null,
+        bool $downloadable = false,
+        string $infoLink = null,
+        string $language = null,
+        string $access = 'public',
+        bool $explicit = false,
+        string $category = null,
+        string $type = null,
+        bool $ratingAllowed = true,
+        string $publishDate = null,
+        string $folderIds = null
+    ): stdClass {
         $query = [
             'action' => 'issuu.document.url_upload',
             'slurpUrl' => $slurpUrl,
@@ -165,20 +164,20 @@ class Documents
      * @param  integer $pageSize       Maximum number of documents to be returned. Value must be between 0 - 30. Default is 10
      * @param  string  $documentSortBy Reponse parameter to sort the result by. Sorting can only be done on a single parameter. Default is no particular sort order
      * @param  string  $responseParams Comma-separated list of response parameters to be returned.
-     * @return object
+     * @return stdClass
      */
     public function list(
-        $documentStates = null,
-        $access = null,
-        $origins = null,
-        $orgDocTypes = null,
-        $orgDocName = null,
-        $resultOrder = 'asc',
-        $startIndex = 0,
-        $pageSize = 10,
-        $documentSortBy = null,
-        $responseParams = null
-    ) {
+        string $documentStates = null,
+        string $access = null,
+        string $origins = null,
+        string $orgDocTypes = null,
+        string $orgDocName = null,
+        string $resultOrder = 'asc',
+        int $startIndex = 0,
+        int $pageSize = 10,
+        string $documentSortBy = null,
+        string $responseParams = null
+    ): stdClass {
         $query = [
             'action' => 'issuu.documents.list',
             'documentStates' => $documentStates,
@@ -193,7 +192,6 @@ class Documents
             'responseParams' => $responseParams,
         ];
 
-        // Perform query
         $documents = $this->issuu->getResponse($query);
 
         return $documents->rsp->_content->result;
@@ -210,18 +208,18 @@ class Documents
      * @param  string  $category        6 digit code indicating Document Category - See http://developers.issuu.com/managing-your-publications/documents/category/
      * @param  string  $type            6 digit code indicating Document Type - See http://developers.issuu.com/managing-your-publications/documents/type/
      * @param  string  $publishDate     Datetime when this document was originally published. Default is at the time of upload. See http://developers.issuu.com/managing-your-publications/date-and-time-formats/ for formatting rules
-     * @return object
+     * @return stdClass
      */
     public function update(
-        $name,
-        $title = null,
-        $tags = null,
-        $description = null,
-        $language = null,
-        $category = null,
-        $type = null,
-        $publishDate = null
-    ) {
+        string $name,
+        string $title = null,
+        string $tags = null,
+        string $description = null,
+        string $language = null,
+        string $category = null,
+        string $type = null,
+        string $publishDate = null
+    ): stdClass {
         $query = [
             'action' => 'issuu.document.update',
             'name' => $name,
@@ -234,7 +232,6 @@ class Documents
             'publishDate' > $publishDate,
         ];
 
-        // Perform query
         $documents = $this->issuu->getResponse($query);
 
         return $documents->rsp->_content;
@@ -245,14 +242,13 @@ class Documents
      * @param  string $names Comma-separated list of document names
      * @return string
      */
-    public function delete($names)
+    public function delete(string $names): string
     {
         $query = [
             'action' => 'issuu.document.delete',
             'names' => $names,
         ];
 
-        // Perform query
         $documents = $this->issuu->getResponse($query);
 
         return $documents->rsp->stat;
