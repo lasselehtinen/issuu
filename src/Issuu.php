@@ -4,9 +4,11 @@ declare(strict_types=1);
 namespace lasselehtinen\Issuu;
 
 use GuzzleHttp\Client;
+use lasselehtinen\Issuu\Exceptions\AuthenticationRequired;
 use lasselehtinen\Issuu\Exceptions\DocumentFailedConversion;
 use lasselehtinen\Issuu\Exceptions\DocumentNotFound;
 use lasselehtinen\Issuu\Exceptions\DocumentStillConverting;
+use lasselehtinen\Issuu\Exceptions\RequestThrottled;
 use lasselehtinen\Issuu\Exceptions\EmbedNotFound;
 use lasselehtinen\Issuu\Exceptions\ExceededQuotaForMonthlyUploads;
 use lasselehtinen\Issuu\Exceptions\ExceededQuotaForUnlistedPublications;
@@ -75,8 +77,14 @@ class Issuu
         // Check for errors
         if ($this->responseHasErrors($json)) {
             switch ($this->getErrorCode($json)) {
+                case '009':
+                    throw new AuthenticationRequired();
+                    break;
                 case '010':
                     throw new InvalidApiKey();
+                    break;
+                case '012':
+                    throw new RequestThrottled();
                     break;
                 case '200':
                     throw new RequiredFieldIsMissing();
@@ -114,13 +122,56 @@ class Issuu
         return $json;
     }
 
+    public function getResponseHTML(array $queryParameters): string
+    {
+        $queryParameters['apiKey'] = $this->apiKey;
+
+        // Remove null/empty parameters
+        $queryParameters = array_filter($queryParameters);
+        $queryParameters['signature'] = $this->getSignature($queryParameters);
+        $response = $this->client->post('http://api.issuu.com/1_0', [
+            'query' => $queryParameters,
+        ]);
+        $html = $response->getBody()->getContents();
+
+        // Check for errors
+        $json = json_decode($html);
+        if ($json && $this->responseHasErrors($json)) {
+            switch ($this->getErrorCode($json)) {
+                case '009':
+                    throw new AuthenticationRequired();
+                    break;
+                case '010':
+                    throw new InvalidApiKey();
+                    break;
+                case '012':
+                    throw new RequestThrottled();
+                    break;
+                case '200':
+                    throw new RequiredFieldIsMissing();
+                    break;
+                case '201':
+                    throw new InvalidFieldFormat();
+                    break;
+            }
+        }
+
+        return $html;
+    }
+
     public function responseHasErrors(stdClass $json): bool
     {
+        // If the response was invalid JSON, no worries
+        if (!$json) return false;
+
         return isset($json->rsp->_content->error);
     }
 
     public function getErrorCode(stdClass $json): string
     {
+        // If the response was invalid JSON, no worries
+        if (!$json) return false;
+
         return $json->rsp->_content->error->code;
     }
 }
