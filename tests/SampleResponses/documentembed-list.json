@@ -1,0 +1,23 @@
+{
+    "rsp": {
+        "_content": {
+            "result": {
+                "totalCount": 1,
+                "startIndex": 0,
+                "pageSize": 10,
+                "more": false,
+                "_content": [
+                    {
+                        "documentEmbed": {
+                            "id": 1000080,
+                            "dataConfigId": "1001178/1000080",
+                            "width": 320,
+                            "height": 180
+                        }
+                    }
+                ]
+            }
+        },
+        "stat": "ok"
+    }
+}
