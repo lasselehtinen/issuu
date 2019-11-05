@@ -162,7 +162,9 @@ class Issuu
     public function responseHasErrors(stdClass $json): bool
     {
         // If the response was invalid JSON, no worries
-        if (!$json) return false;
+        if (!$json) {
+            return false;
+        }
 
         return isset($json->rsp->_content->error);
     }
@@ -170,7 +172,9 @@ class Issuu
     public function getErrorCode(stdClass $json): string
     {
         // If the response was invalid JSON, no worries
-        if (!$json) return false;
+        if (!$json) {
+            return false;
+        }
 
         return $json->rsp->_content->error->code;
     }
