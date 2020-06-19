@@ -46,7 +46,7 @@ class Bookmarks
      * @param  string  $folderId       Folder containing bookmarks to be listed
      * @param  string  $resultOrder    "asc" or "desc". Default value is "asc"
      * @param  integer $startIndex     Zero based index to start pagination
-     * @param  integer $pageIndex      Maximum number of documents to be returned. Value must be between 0 - 30. Default is 10.
+     * @param  integer $pageSize      Maximum number of documents to be returned. Value must be between 0 - 30. Default is 10.
      * @param  string  $bookmarkSortBy Response parameter to sort the result by. Sorting can only be done on a single parameter. Default is no particular sort order.
      * @param  string  $responseParams Comma-separated list of Response parameter to be returned. If no value is submitted all parameters will be returned
      * @return stdClass
