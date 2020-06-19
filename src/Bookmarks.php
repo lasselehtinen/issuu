@@ -55,8 +55,8 @@ class Bookmarks
         string $folderId = null,
         string $resultOrder = 'asc',
         int $startIndex = 0,
-        int $pageIndex = 10,
-        int $bookmarkSortBy = null,
+        int $pageSize = 10,
+        string $bookmarkSortBy = null,
         int $responseParams = null
     ): stdClass {
         $query = [
@@ -64,7 +64,7 @@ class Bookmarks
             'folderId' => $folderId,
             'resultOrder' => $resultOrder,
             'startIndex' => $startIndex,
-            'pageIndex' => $pageIndex,
+            'pageSize' => $pageSize,
             'bookmarkSortBy' => $bookmarkSortBy,
             'responseParams' => $responseParams,
         ];
