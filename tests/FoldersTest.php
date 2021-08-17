@@ -19,8 +19,8 @@ class FoldersTest extends TestCase
         $foldersAdd = $folders->add('Cool stuff');
 
         // Additional checks
-        $this->assertInternalType('object', $foldersAdd);
-        $this->assertInternalType('object', $foldersAdd->folder);
+        $this->assertIsObject($foldersAdd);
+        $this->assertIsObject($foldersAdd->folder);
         $this->assertSame('Stuff I have collected', $foldersAdd->folder->description);
     }
 
@@ -34,18 +34,18 @@ class FoldersTest extends TestCase
         $folders = new Folders($issuu);
         $foldersList = $folders->list();
 
-        $this->assertInternalType('object', $foldersList);
+        $this->assertIsObject($foldersList);
 
         // Pagination attributes
-        $this->assertAttributeEquals(1, 'totalCount', $foldersList);
-        $this->assertAttributeEquals(0, 'startIndex', $foldersList);
-        $this->assertAttributeEquals(10, 'pageSize', $foldersList);
-        $this->assertAttributeEquals(false, 'more', $foldersList);
+        $this->assertSame(1, $foldersList->totalCount);
+        $this->assertSame(0, $foldersList->startIndex);
+        $this->assertSame(10, $foldersList->pageSize);
+        $this->assertSame(false, $foldersList->more);
 
         // Additional checks
-        $this->assertInternalType('array', $foldersList->_content);
+        $this->assertIsArray($foldersList->_content);
         $this->assertCount(1, $foldersList->_content);
-        $this->assertInternalType('object', $foldersList->_content[0]->folder);
+        $this->assertIsObject($foldersList->_content[0]->folder);
     }
 
     /**
@@ -58,11 +58,11 @@ class FoldersTest extends TestCase
         $folders = new Folders($issuu);
         $foldersUpdate = $folders->update('4c3ba964-60c3-4349-94d0-ff86db2d47c9');
 
-        $this->assertInternalType('object', $foldersUpdate);
+        $this->assertIsObject($foldersUpdate);
 
         // Additional checks
-        $this->assertInternalType('object', $foldersUpdate);
-        $this->assertInternalType('object', $foldersUpdate->folder);
+        $this->assertIsObject($foldersUpdate);
+        $this->assertIsObject($foldersUpdate->folder);
         $this->assertSame('Stuff I have collected', $foldersUpdate->folder->description);
     }
 

@@ -18,18 +18,18 @@ class DocumentsTest extends TestCase
         $documents = new Documents($issuu);
         $documentsList = $documents->list();
 
-        $this->assertInternalType('object', $documentsList);
+        $this->assertIsObject($documentsList);
 
         // Pagination attributes
-        $this->assertAttributeEquals(1349, 'totalCount', $documentsList);
-        $this->assertAttributeEquals(0, 'startIndex', $documentsList);
-        $this->assertAttributeEquals(10, 'pageSize', $documentsList);
-        $this->assertAttributeEquals(true, 'more', $documentsList);
+        $this->assertSame(1349, $documentsList->totalCount);
+        $this->assertSame(0, $documentsList->startIndex);
+        $this->assertSame(10, $documentsList->pageSize);
+        $this->assertSame(true, $documentsList->more);
 
         // Additional checks
-        $this->assertInternalType('array', $documentsList->_content);
+        $this->assertIsArray($documentsList->_content);
         $this->assertCount(10, $documentsList->_content);
-        $this->assertInternalType('object', $documentsList->_content[0]->document);
+        $this->assertIsObject($documentsList->_content[0]->document);
     }
 
     /**
@@ -42,11 +42,11 @@ class DocumentsTest extends TestCase
         $documents = new Documents($issuu);
         $documentsUpload = $documents->urlUpload('http://www.example.com/sample.pdf');
 
-        $this->assertInternalType('object', $documentsUpload);
+        $this->assertIsObject($documentsUpload);
 
         // Additional checks
-        $this->assertInternalType('object', $documentsUpload);
-        $this->assertInternalType('object', $documentsUpload->document);
+        $this->assertIsObject($documentsUpload);
+        $this->assertIsObject($documentsUpload->document);
         $this->assertSame('public', $documentsUpload->document->access);
     }
 
@@ -60,11 +60,11 @@ class DocumentsTest extends TestCase
         $documents = new Documents($issuu);
         $documentsUpload = $documents->upload(__DIR__ . '/sample.pdf');
 
-        $this->assertInternalType('object', $documentsUpload);
+        $this->assertIsObject($documentsUpload);
 
         // Additional checks
-        $this->assertInternalType('object', $documentsUpload);
-        $this->assertInternalType('object', $documentsUpload->document);
+        $this->assertIsObject($documentsUpload);
+        $this->assertIsObject($documentsUpload->document);
         $this->assertSame('public', $documentsUpload->document->access);
     }
 
@@ -91,11 +91,11 @@ class DocumentsTest extends TestCase
         $documents = new Documents($issuu);
         $documentsUpload = $documents->update('racing');
 
-        $this->assertInternalType('object', $documentsUpload);
+        $this->assertIsObject($documentsUpload);
 
         // Additional checks
-        $this->assertInternalType('object', $documentsUpload);
-        $this->assertInternalType('object', $documentsUpload->document);
+        $this->assertIsObject($documentsUpload);
+        $this->assertIsObject($documentsUpload->document);
         $this->assertSame('public', $documentsUpload->document->access);
     }
 

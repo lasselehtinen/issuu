@@ -19,8 +19,8 @@ class BookmarksTest extends TestCase
         $bookmarksAdd = $bookmarks->add('publination', '081024182109-9280632f2866416d97634cdccc66715d');
 
         // Additional checks
-        $this->assertInternalType('object', $bookmarksAdd);
-        $this->assertInternalType('object', $bookmarksAdd->bookmark);
+        $this->assertIsObject($bookmarksAdd);
+        $this->assertIsObject($bookmarksAdd->bookmark);
         $this->assertSame('Wild Swim: The best outdoor swims across Britain', $bookmarksAdd->bookmark->title);
     }
 
@@ -34,18 +34,18 @@ class BookmarksTest extends TestCase
         $bookmarks = new Bookmarks($issuu);
         $bookmarksList = $bookmarks->list();
 
-        $this->assertInternalType('object', $bookmarksList);
+        $this->assertIsObject($bookmarksList);
 
         // Pagination attributes
-        $this->assertAttributeEquals(1, 'totalCount', $bookmarksList);
-        $this->assertAttributeEquals(0, 'startIndex', $bookmarksList);
-        $this->assertAttributeEquals(10, 'pageSize', $bookmarksList);
-        $this->assertAttributeEquals(false, 'more', $bookmarksList);
+        $this->assertSame(1, $bookmarksList->totalCount);
+        $this->assertSame(0, $bookmarksList->startIndex);
+        $this->assertSame(10, $bookmarksList->pageSize);
+        $this->assertSame(false, $bookmarksList->more);
 
         // Additional checks
-        $this->assertInternalType('array', $bookmarksList->_content);
+        $this->assertIsArray($bookmarksList->_content);
         $this->assertCount(1, $bookmarksList->_content);
-        $this->assertInternalType('object', $bookmarksList->_content[0]->bookmark);
+        $this->assertIsObject($bookmarksList->_content[0]->bookmark);
     }
 
     /**
