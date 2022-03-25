@@ -1,0 +1,16 @@
+{
+    "rsp": {
+        "_content": {
+            "documentEmbed": {
+                "id": 1000068,
+                "dataConfigId": "1000974/1000068",
+                "documentId": "131030110954-12df4c6d21ba49af8eb1350219b0d4ef",
+                "readerStartPage": 3,
+                "width": 320,
+                "height": 240,
+                "created": "2013-10-30T11:09:55.000Z"
+            }
+        },
+        "stat": "ok"
+    }
+}
