@@ -52,3 +52,9 @@ jobs:
 
       - name: Run static analysis
         run: vendor/bin/grumphp run --tasks=phpstan
+
+      - name: Run unit tests
+        env:
+          ISSUU_API_KEY: ${{ secrets.ISSUU_API_KEY }}
+        run: vendor/bin/grumphp run --tasks=phpunit
+      
