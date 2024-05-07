@@ -9,10 +9,6 @@ on:
       - 'composer.json'
       - 'composer.lock'
 
-concurrency:
-  group: ${{ github.repository }}-jobs
-  cancel-in-progress: false
-
 jobs:
   test:
     runs-on: ${{ matrix.os }}
@@ -23,6 +19,7 @@ jobs:
         os: [ubuntu-latest]
         php: [8.3, 8.2]
         stability: [prefer-lowest, prefer-stable]
+      max-parallel: 1
 
     name: P${{ matrix.php }} - ${{ matrix.stability }} - ${{ matrix.os }}
 
