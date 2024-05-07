@@ -5,9 +5,13 @@ on:
     paths:
       - '**.php'
       - '.github/workflows/run-tests.yml'
-      - 'phpunit.xml.dist'
+      - 'phpunit.xml'
       - 'composer.json'
       - 'composer.lock'
+
+concurrency:
+  group: ${{ github.repository }}-jobs
+  cancel-in-progress: false
 
 jobs:
   test:
