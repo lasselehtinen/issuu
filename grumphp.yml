@@ -21,15 +21,25 @@ grumphp:
         paths: []
     tasks:
         composer:
-        securitychecker_local:
-        phpunit:
-            config_file: ~
+        phplint:
+            triggered_by: ['php']
+        securitychecker_roave:
+            run_always: true
+        phpstan:
+            level: 9
+            ignore_patterns:
+                - "vendor*"
+            triggered_by: ['php']
+            memory_limit: "-1"
         phpcs:
             standard: PSR2
             tab_width: 4
             triggered_by: [php]
+            warning_severity: 6
             ignore_patterns:
                 - "vendor*"
-                - "tests*"
+        phpunit:
+            config_file: ~
+
     testsuites: []
     extensions: []

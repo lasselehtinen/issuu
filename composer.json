@@ -16,7 +16,10 @@
     "require-dev": {
         "phpunit/phpunit": "^9.0",
         "phpro/grumphp": "^1.4",
-        "squizlabs/php_codesniffer": "^3.1"
+        "squizlabs/php_codesniffer": "^3.7",
+        "php-parallel-lint/php-parallel-lint": "^1.4",
+        "roave/security-advisories": "latest-dev",
+        "phpstan/phpstan": "^1.10"
     },
     "autoload": {
         "psr-4": {
@@ -27,5 +30,10 @@
         "classmap": [
             "tests/TestCase.php"
         ]
+    },
+    "config": {
+        "allow-plugins": {
+            "phpro/grumphp": false
+        }
     }
 }

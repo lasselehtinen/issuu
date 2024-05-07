@@ -1,0 +1,42 @@
+{
+    "slug": "zp0m1zti7ir",
+    "owner": "kirja",
+    "cover": {
+      "large": {
+        "url": "https://image.isu.pub/240425135049-c6739df8b215bb921d5fd15367d0cd31/jpg/page_1_thumb_large.jpg",
+        "width": 301,
+        "height": 480
+      },
+      "medium": {
+        "url": "https://image.isu.pub/240425135049-c6739df8b215bb921d5fd15367d0cd31/jpg/page_1_thumb_medium.jpg",
+        "width": 94,
+        "height": 150
+      },
+      "small": {
+        "url": "https://image.isu.pub/240425135049-c6739df8b215bb921d5fd15367d0cd31/jpg/page_1_thumb_small.jpg",
+        "width": 63,
+        "height": 100
+      }
+    },
+    "fileInfo": {
+      "isCopyrightConfirmed": false,
+      "name": "9789520458751_lukun.pdf",
+      "size": 11009929,
+      "pageCount": 20,
+      "type": "PDF",
+      "conversionStatus": "DONE"
+    },
+    "state": "DRAFT",
+    "location": "https://issuu.com/home/drafts/zp0m1zti7ir",
+    "changes": {
+      "access": "PUBLIC",
+      "description": "<p>Saisiko olla yksi telttaretki ja lohi-herne-marmeladileipä? </p>",
+      "file": 119824977,
+      "originalPublishDate": "2024-06-10T00:00:00.000Z",
+      "preview": false,
+      "title": "Kortesuo, Katleena: Veevi ja aivopieruverkkarit (Tammi)",
+      "downloadable": true,
+      "showDetectedLinks": false
+    },
+    "created": "2024-04-25T13:50:49.000Z"
+  }

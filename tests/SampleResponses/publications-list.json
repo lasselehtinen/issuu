@@ -1,0 +1,434 @@
+{
+    "results": [
+      {
+        "state": "PUBLISHED",
+        "slug": "od0gkhdqc32",
+        "owner": "kirja",
+        "cover": {
+          "small": {
+            "url": "https://image.isu.pub/240502060045-debf16435e3e943fb148dcc90b6eed24/jpg/page_1_thumb_small.jpg",
+            "width": 63,
+            "height": 100
+          },
+          "medium": {
+            "url": "https://image.isu.pub/240502060045-debf16435e3e943fb148dcc90b6eed24/jpg/page_1_thumb_medium.jpg",
+            "width": 94,
+            "height": 150
+          },
+          "large": {
+            "url": "https://image.isu.pub/240502060045-debf16435e3e943fb148dcc90b6eed24/jpg/page_1_thumb_large.jpg",
+            "width": 301,
+            "height": 480
+          }
+        },
+        "fileInfo": {
+          "isCopyrightConfirmed": false,
+          "name": "9789510494127_lukun.pdf",
+          "size": 528460,
+          "pageCount": 20,
+          "type": "PDF",
+          "conversionStatus": "DONE"
+        },
+        "access": "PUBLIC",
+        "title": "Ahnhem, Stefan: Vaihto (WSOY)",
+        "description": "<p>Psykologinen trilleri ruotsalaiselta suosikkidekkaristilta! </p>",
+        "originalPublishDate": "2024-06-13T00:00:00.000Z",
+        "preview": false,
+        "file": 119986640,
+        "downloadable": true,
+        "showDetectedLinks": false,
+        "backDate": "2024-06-13T00:00:00.000Z",
+        "created": "2024-05-02T06:00:49.000Z",
+        "location": "https://issuu.com/home/docs/od0gkhdqc32",
+        "publicLocation": "https://issuu.com/kirja/docs/9789510494127-vaihto"
+      },
+      {
+        "state": "PUBLISHED",
+        "slug": "jhi5muwuseq",
+        "owner": "kirja",
+        "cover": {
+          "small": {
+            "url": "https://image.isu.pub/240430124139-10dcbd686fc5d0f7b08688a4965e0653/jpg/page_1_thumb_small.jpg",
+            "width": 63,
+            "height": 100
+          },
+          "medium": {
+            "url": "https://image.isu.pub/240430124139-10dcbd686fc5d0f7b08688a4965e0653/jpg/page_1_thumb_medium.jpg",
+            "width": 94,
+            "height": 150
+          },
+          "large": {
+            "url": "https://image.isu.pub/240430124139-10dcbd686fc5d0f7b08688a4965e0653/jpg/page_1_thumb_large.jpg",
+            "width": 301,
+            "height": 480
+          }
+        },
+        "fileInfo": {
+          "isCopyrightConfirmed": false,
+          "name": "9789520461096_lukun.pdf",
+          "size": 487022,
+          "pageCount": 21,
+          "type": "PDF",
+          "conversionStatus": "DONE"
+        },
+        "access": "PUBLIC",
+        "title": "Behm, Jukka: Enkelin nyrkki (Tammi)",
+        "description": "<p>\"Enkelin nyrkki Brownien apuna.\" – Evening Sun </p>",
+        "originalPublishDate": "2024-06-12T00:00:00.000Z",
+        "preview": false,
+        "file": 119943141,
+        "downloadable": true,
+        "showDetectedLinks": false,
+        "backDate": "2024-06-12T00:00:00.000Z",
+        "created": "2024-04-30T12:41:42.000Z",
+        "location": "https://issuu.com/home/docs/jhi5muwuseq",
+        "publicLocation": "https://issuu.com/kirja/docs/9789520461096-enkelin-nyrkki"
+      },
+      {
+        "state": "PUBLISHED",
+        "slug": "2bdi6d81cgx",
+        "owner": "kirja",
+        "cover": {
+          "small": {
+            "url": "https://image.isu.pub/240430110845-4b5042ccfc2884a039da5c05310588cd/jpg/page_1_thumb_small.jpg",
+            "width": 80,
+            "height": 100
+          },
+          "medium": {
+            "url": "https://image.isu.pub/240430110845-4b5042ccfc2884a039da5c05310588cd/jpg/page_1_thumb_medium.jpg",
+            "width": 120,
+            "height": 150
+          },
+          "large": {
+            "url": "https://image.isu.pub/240430110845-4b5042ccfc2884a039da5c05310588cd/jpg/page_1_thumb_large.jpg",
+            "width": 320,
+            "height": 400
+          }
+        },
+        "fileInfo": {
+          "isCopyrightConfirmed": false,
+          "name": "9789520461621_lukun.pdf",
+          "size": 53089182,
+          "pageCount": 20,
+          "type": "PDF",
+          "conversionStatus": "DONE"
+        },
+        "access": "PUBLIC",
+        "title": ": Disney. 5 minuutin satuja eläinystävistä (Disney)",
+        "description": "<p>Eläinkavereiden kanssa on aina kivaa! </p>",
+        "originalPublishDate": "2024-06-12T00:00:00.000Z",
+        "preview": false,
+        "file": 119941197,
+        "downloadable": true,
+        "showDetectedLinks": false,
+        "backDate": "2024-06-12T00:00:00.000Z",
+        "created": "2024-04-30T11:08:50.000Z",
+        "location": "https://issuu.com/home/docs/2bdi6d81cgx",
+        "publicLocation": "https://issuu.com/kirja/docs/9789520461621-disney-5-minuutin-satuja-elainystavi"
+      },
+      {
+        "state": "PUBLISHED",
+        "slug": "l80jafbp2im",
+        "owner": "kirja",
+        "cover": {
+          "small": {
+            "url": "https://image.isu.pub/240430092739-be3985fbeeecf3caaa2b54623d312f7d/jpg/page_1_thumb_small.jpg",
+            "width": 67,
+            "height": 100
+          },
+          "medium": {
+            "url": "https://image.isu.pub/240430092739-be3985fbeeecf3caaa2b54623d312f7d/jpg/page_1_thumb_medium.jpg",
+            "width": 100,
+            "height": 150
+          },
+          "large": {
+            "url": "https://image.isu.pub/240430092739-be3985fbeeecf3caaa2b54623d312f7d/jpg/page_1_thumb_large.jpg",
+            "width": 319,
+            "height": 480
+          }
+        },
+        "fileInfo": {
+          "isCopyrightConfirmed": false,
+          "name": "9789510302996_lukun.pdf",
+          "size": 1237575,
+          "pageCount": 22,
+          "type": "PDF",
+          "conversionStatus": "DONE"
+        },
+        "access": "PUBLIC",
+        "title": "Shakespeare, William: Kaksi nuorta veronalaista (WSOY)",
+        "description": "<p>Shakespearen varhaiskauden komedia, jota ei ole suomennettu sitten Paavo Cajanderin.</p>",
+        "originalPublishDate": "2005-06-01T00:00:00.000Z",
+        "preview": false,
+        "file": 119938776,
+        "downloadable": true,
+        "showDetectedLinks": false,
+        "backDate": "2005-06-01T00:00:00.000Z",
+        "created": "2024-04-30T09:27:43.000Z",
+        "location": "https://issuu.com/home/docs/l80jafbp2im",
+        "publicLocation": "https://issuu.com/kirja/docs/9789510302996-kaksi-nuorta-veronalaista"
+      },
+      {
+        "state": "PUBLISHED",
+        "slug": "340do6gt7sh",
+        "owner": "kirja",
+        "cover": {
+          "small": {
+            "url": "https://image.isu.pub/240430091106-62783b2e4aee58fbe479029d5b40659e/jpg/page_1_thumb_small.jpg",
+            "width": 63,
+            "height": 100
+          },
+          "medium": {
+            "url": "https://image.isu.pub/240430091106-62783b2e4aee58fbe479029d5b40659e/jpg/page_1_thumb_medium.jpg",
+            "width": 94,
+            "height": 150
+          },
+          "large": {
+            "url": "https://image.isu.pub/240430091106-62783b2e4aee58fbe479029d5b40659e/jpg/page_1_thumb_large.jpg",
+            "width": 301,
+            "height": 480
+          }
+        },
+        "fileInfo": {
+          "isCopyrightConfirmed": false,
+          "name": "9789510505533_lukun.pdf",
+          "size": 315676,
+          "pageCount": 22,
+          "type": "PDF",
+          "conversionStatus": "DONE"
+        },
+        "access": "PUBLIC",
+        "title": "Harding, Andrew: Kylä joka ei luovuttanut (WSOY)",
+        "description": "<p>Venäläiset hyökkääjät ovat tulossa, mutta ukrainalaisen pikkukaupungin asukkailla on suunnitelma. </p>",
+        "originalPublishDate": "2024-06-06T00:00:00.000Z",
+        "preview": false,
+        "file": 119938312,
+        "downloadable": true,
+        "showDetectedLinks": false,
+        "backDate": "2024-06-06T00:00:00.000Z",
+        "created": "2024-04-30T09:11:09.000Z",
+        "location": "https://issuu.com/home/docs/340do6gt7sh",
+        "publicLocation": "https://issuu.com/kirja/docs/9789510505533-kyla-joka-ei-luovuttanut"
+      },
+      {
+        "state": "PUBLISHED",
+        "slug": "lvzdquj55rz",
+        "owner": "kirja",
+        "cover": {
+          "small": {
+            "url": "https://image.isu.pub/240430084654-6143e041c2d3ae973a58bce35254fb09/jpg/page_1_thumb_small.jpg",
+            "width": 63,
+            "height": 100
+          },
+          "medium": {
+            "url": "https://image.isu.pub/240430084654-6143e041c2d3ae973a58bce35254fb09/jpg/page_1_thumb_medium.jpg",
+            "width": 94,
+            "height": 150
+          },
+          "large": {
+            "url": "https://image.isu.pub/240430084654-6143e041c2d3ae973a58bce35254fb09/jpg/page_1_thumb_large.jpg",
+            "width": 301,
+            "height": 480
+          }
+        },
+        "fileInfo": {
+          "isCopyrightConfirmed": false,
+          "name": "9789510501696_lukun.pdf",
+          "size": 633957,
+          "pageCount": 21,
+          "type": "PDF",
+          "conversionStatus": "DONE"
+        },
+        "access": "PUBLIC",
+        "title": "Lähteenmäki, Selma: Eläinten turvakoti Tuulispää (WSOY)",
+        "description": "<p>Sykähdyttävä teos paikasta, joka tarjoaa loppuelämän kodin kaikenkarvaisille eläinystäville. </p>",
+        "originalPublishDate": "2024-06-05T00:00:00.000Z",
+        "preview": false,
+        "file": 119937756,
+        "downloadable": true,
+        "showDetectedLinks": false,
+        "backDate": "2024-06-05T00:00:00.000Z",
+        "created": "2024-04-30T08:46:56.000Z",
+        "location": "https://issuu.com/home/docs/lvzdquj55rz",
+        "publicLocation": "https://issuu.com/kirja/docs/9789510501696-elainten-turvakoti-tuulispaa"
+      },
+      {
+        "state": "PUBLISHED",
+        "slug": "blx8559ye7g",
+        "owner": "kirja",
+        "cover": {
+          "small": {
+            "url": "https://image.isu.pub/240430084608-8ce7d312d34de0e9c0b9fc40fde8360c/jpg/page_1_thumb_small.jpg",
+            "width": 65,
+            "height": 100
+          },
+          "medium": {
+            "url": "https://image.isu.pub/240430084608-8ce7d312d34de0e9c0b9fc40fde8360c/jpg/page_1_thumb_medium.jpg",
+            "width": 98,
+            "height": 150
+          },
+          "large": {
+            "url": "https://image.isu.pub/240430084608-8ce7d312d34de0e9c0b9fc40fde8360c/jpg/page_1_thumb_large.jpg",
+            "width": 314,
+            "height": 479
+          }
+        },
+        "fileInfo": {
+          "isCopyrightConfirmed": false,
+          "name": "9789524033787_lukun.pdf",
+          "size": 908394,
+          "pageCount": 17,
+          "type": "PDF",
+          "conversionStatus": "DONE"
+        },
+        "access": "PUBLIC",
+        "title": "Jessup, Joel: Arsène Lupinin aivopähkinät (Bazar)",
+        "description": "<p>Mestarivarkaan mysteerit </p>",
+        "originalPublishDate": "2024-06-13T00:00:00.000Z",
+        "preview": false,
+        "file": 119937738,
+        "downloadable": true,
+        "showDetectedLinks": false,
+        "backDate": "2024-06-13T00:00:00.000Z",
+        "created": "2024-04-30T08:46:10.000Z",
+        "location": "https://issuu.com/home/docs/blx8559ye7g",
+        "publicLocation": "https://issuu.com/kirja/docs/9789524033787-arsene-lupinin-aivopahkinat"
+      },
+      {
+        "state": "PUBLISHED",
+        "slug": "lbq99k9ncta",
+        "owner": "kirja",
+        "cover": {
+          "small": {
+            "url": "https://image.isu.pub/240430083156-a775ef9a2f4768e987a5786051d7879c/jpg/page_1_thumb_small.jpg",
+            "width": 64,
+            "height": 100
+          },
+          "medium": {
+            "url": "https://image.isu.pub/240430083156-a775ef9a2f4768e987a5786051d7879c/jpg/page_1_thumb_medium.jpg",
+            "width": 97,
+            "height": 150
+          },
+          "large": {
+            "url": "https://image.isu.pub/240430083156-a775ef9a2f4768e987a5786051d7879c/jpg/page_1_thumb_large.jpg",
+            "width": 308,
+            "height": 480
+          }
+        },
+        "fileInfo": {
+          "isCopyrightConfirmed": false,
+          "name": "9789523768055_lukun.pdf",
+          "size": 406681,
+          "pageCount": 21,
+          "type": "PDF",
+          "conversionStatus": "DONE"
+        },
+        "access": "PUBLIC",
+        "title": "Vuorinen, Juha: Andalusialainen mäyräkoira (Bazar)",
+        "description": "<p>Animaalista menoa elävien ja kuolleiden kanssa</p>",
+        "originalPublishDate": "2024-06-14T00:00:00.000Z",
+        "preview": false,
+        "file": 119937425,
+        "downloadable": true,
+        "showDetectedLinks": false,
+        "backDate": "2024-06-14T00:00:00.000Z",
+        "created": "2024-04-30T08:31:59.000Z",
+        "location": "https://issuu.com/home/docs/lbq99k9ncta",
+        "publicLocation": "https://issuu.com/kirja/docs/9789523768055-andalusialainen-mayrakoira"
+      },
+      {
+        "state": "PUBLISHED",
+        "slug": "g2lisde5zw0",
+        "owner": "kirja",
+        "cover": {
+          "small": {
+            "url": "https://image.isu.pub/240429131102-8e0c6a05694c83c4e80c7125098ac749/jpg/page_1_thumb_small.jpg",
+            "width": 67,
+            "height": 100
+          },
+          "medium": {
+            "url": "https://image.isu.pub/240429131102-8e0c6a05694c83c4e80c7125098ac749/jpg/page_1_thumb_medium.jpg",
+            "width": 101,
+            "height": 150
+          },
+          "large": {
+            "url": "https://image.isu.pub/240429131102-8e0c6a05694c83c4e80c7125098ac749/jpg/page_1_thumb_large.jpg",
+            "width": 320,
+            "height": 477
+          }
+        },
+        "fileInfo": {
+          "isCopyrightConfirmed": false,
+          "name": "9789520462826_lukun.pdf",
+          "size": 31196120,
+          "pageCount": 21,
+          "type": "PDF",
+          "conversionStatus": "DONE"
+        },
+        "access": "PUBLIC",
+        "title": "Oseman, Alice: Heartstopper. Osa 5 (Tammi)",
+        "description": "<p>Nickin ja Charlien tunteet syvenevät! </p>",
+        "originalPublishDate": "2024-06-12T00:00:00.000Z",
+        "preview": false,
+        "file": 119913114,
+        "downloadable": true,
+        "showDetectedLinks": false,
+        "backDate": "2024-06-12T00:00:00.000Z",
+        "created": "2024-04-29T13:11:06.000Z",
+        "location": "https://issuu.com/home/docs/g2lisde5zw0",
+        "publicLocation": "https://issuu.com/kirja/docs/9789520462826-heartstopper-osa-5"
+      },
+      {
+        "state": "PUBLISHED",
+        "slug": "hrh42so3oby",
+        "owner": "kirja",
+        "cover": {
+          "small": {
+            "url": "https://image.isu.pub/240429112150-63bfdcb720e9b16023d3116ca479e4e0/jpg/page_1_thumb_small.jpg",
+            "width": 63,
+            "height": 100
+          },
+          "medium": {
+            "url": "https://image.isu.pub/240429112150-63bfdcb720e9b16023d3116ca479e4e0/jpg/page_1_thumb_medium.jpg",
+            "width": 94,
+            "height": 150
+          },
+          "large": {
+            "url": "https://image.isu.pub/240429112150-63bfdcb720e9b16023d3116ca479e4e0/jpg/page_1_thumb_large.jpg",
+            "width": 301,
+            "height": 480
+          }
+        },
+        "fileInfo": {
+          "isCopyrightConfirmed": false,
+          "name": "9789510504550_lukun.pdf",
+          "size": 944213,
+          "pageCount": 16,
+          "type": "PDF",
+          "conversionStatus": "DONE"
+        },
+        "access": "PUBLIC",
+        "title": "Sarenbrant, Sofie: Parasiitti (WSOY)",
+        "description": "<p>Ruumiin palaneet jäännökset, tappolista – ja listan viimeisenä nimenä Emma Sköld.</p><p></p>",
+        "originalPublishDate": "2024-05-31T00:00:00.000Z",
+        "preview": false,
+        "file": 119910512,
+        "downloadable": true,
+        "showDetectedLinks": false,
+        "backDate": "2024-05-31T00:00:00.000Z",
+        "created": "2024-04-29T11:21:53.000Z",
+        "location": "https://issuu.com/home/docs/hrh42so3oby",
+        "publicLocation": "https://issuu.com/kirja/docs/9789510504550-parasiitti"
+      }
+    ],
+    "links": {
+      "self": {
+        "href": "https://api.issuu.com/v2/publications"
+      },
+      "next": {
+        "href": "https://api.issuu.com/v2/publications?size=10&page=2"
+      }
+    },
+    "pageSize": 10,
+    "count": 5347
+  }

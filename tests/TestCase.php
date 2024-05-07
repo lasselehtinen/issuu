@@ -2,33 +2,72 @@
 
 namespace Tests;
 
+use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\HandlerStack;
-use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\Psr7\Response;
 use lasselehtinen\Issuu\Issuu;
+use lasselehtinen\Issuu\Drafts;
+use GuzzleHttp\Handler\MockHandler;
+use lasselehtinen\Issuu\Publications;
 use PHPUnit\Framework\TestCase as BaseTestCase;
 
 abstract class TestCase extends BaseTestCase
 {
     /**
-     * Creates a instance with a mocked response
-     * @param  string $response
-     * @return Issuu
+     * Issuu instance
+     *
+     * @var Issuu
      */
-    public function createMockedInstance($response)
+    public $issuu;
+
+    /**
+     * Common setup for all tests
+     *
+     * @return void
+     */
+    public function setUp(): void
     {
-        // Create a mock and queue response.
-        $mock = new MockHandler([
-            new Response(200, [], $response),
-        ]);
+        parent::setUp();
+        
+        $issuuApiKey = getenv('ISSUU_API_KEY');
 
-        $handler = HandlerStack::create($mock);
-        $client = new Client(['handler' => $handler]);
+        if (empty($issuuApiKey)) {
+            throw new Exception('Could not fetch Issuu API key from env variable.');
+        }
 
-        // Create a new instance with mocked Guzzle
-        $issuu = new Issuu('', '', $client);
+        $this->issuu = new Issuu($issuuApiKey);
+    }
 
-        return $issuu;
+    /**
+     * Clean up generated Drafts and Publications
+     *
+     * @return void
+     */
+    public static function tearDownAfterClass(): void
+    {
+        $issuuApiKey = getenv('ISSUU_API_KEY');
+
+        if (empty($issuuApiKey)) {
+            throw new Exception('Could not fetch Issuu API key from env variable.');
+        }
+
+        $issuu = new Issuu($issuuApiKey);
+        
+        // Remove test Drafts
+        $drafts = new Drafts($issuu);
+        $draftsList = $drafts->list(q: 'Test document', size: 50);
+        
+        foreach ($draftsList->results as $result) {
+            $drafts->deleteDraftBySlug($result->slug);
+        }
+
+        // Remove test Publications
+        $publications = new Publications($issuu);
+        $publicationsList = $publications->list(q: 'Test document', size: 50);
+
+        foreach ($publicationsList->results as $result) {
+            $publications->deletePublicationBySlug($result->slug);
+        }
     }
 }

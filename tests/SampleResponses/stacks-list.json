@@ -1,0 +1,74 @@
+{
+    "results": [
+      {
+        "id": "ce4d20effcc6497fa6597d20a6e08ab2",
+        "title": "Muut",
+        "description": "true",
+        "accessType": "PUBLIC"
+      },
+      {
+        "id": "ac86c7cd7a18426bb6187c6ab62abb33",
+        "title": "Kevään 2023 katalogit",
+        "description": "WSOY:n, Tammen ja Johnny Knigan kevään 2023 katalogit.",
+        "accessType": "PUBLIC"
+      },
+      {
+        "id": "713ac380a966438d88503d232156ae04",
+        "title": "Syksyn 2022 katalogit",
+        "description": "WSOY:n, Tammen ja Johnny Knigan syksyn 2022 katalogit.",
+        "accessType": "PUBLIC"
+      },
+      {
+        "id": "98041eb277b6450c82b7034878142940",
+        "title": "Kevään 2022 katalogit",
+        "description": "WSOY:n, Tammen ja Johnny Knigan kevään 2022 katalogit.",
+        "accessType": "PUBLIC"
+      },
+      {
+        "id": "4639a7ae0e1c4d1a9802eda11537b90f",
+        "title": "Syksyn 2021 katalogit",
+        "description": "WSOY:n, Tammen ja Johnny Knigan syksyn 2021 katalogit.",
+        "accessType": "PUBLIC"
+      },
+      {
+        "id": "5f13948b5ee04c93bcb14c552782dc76",
+        "title": "Kevään 2021 katalogit",
+        "description": "WSOY:n, Tammen ja Johnny Knigan kevään 2021 katalogit.",
+        "accessType": "PUBLIC"
+      },
+      {
+        "id": "33c6d5b5ce92447095a5eed8c91bd2d1",
+        "title": "Syksyn 2020 katalogit",
+        "description": "WSOY:n, Tammen ja Johnny Knigan syksyn 2020 katalogit.",
+        "accessType": "PUBLIC"
+      },
+      {
+        "id": "d17877fab1d145bba1872af166dba3c6",
+        "title": "Kevään 2020 katalogit",
+        "description": "WSOY:n, Tammen ja Johnny Knigan kevään 2020 kirjakatalogit.",
+        "accessType": "PUBLIC"
+      },
+      {
+        "id": "862f01721fe446aa9c923fa4e77bc465",
+        "title": "Syksyn 2019 katalogit",
+        "description": "WSOY:n, Tammen ja Johnny Knigan syksyn 2019 katalogit.",
+        "accessType": "PUBLIC"
+      },
+      {
+        "id": "fdd01fbe47f74a5dbd42c9d4126a0ab8",
+        "title": "Kevään 2019 katalogit",
+        "description": "WSOY:n, Tammen ja Johnny Knigan kevään 2019 kirjakatalogit.",
+        "accessType": "PUBLIC"
+      }
+    ],
+    "links": {
+      "self": {
+        "href": "https://api.issuu.com/v2/stacks"
+      },
+      "next": {
+        "href": "https://api.issuu.com/v2/stacks?size=10&page=2"
+      }
+    },
+    "pageSize": 10,
+    "count": 16
+  }

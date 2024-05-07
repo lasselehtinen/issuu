@@ -1,114 +1,77 @@
 <?php
+
 declare(strict_types=1);
 
 namespace lasselehtinen\Issuu;
 
+use stdClass;
+use Exception;
 use GuzzleHttp\Client;
-use lasselehtinen\Issuu\Exceptions\DocumentFailedConversion;
-use lasselehtinen\Issuu\Exceptions\DocumentNotFound;
-use lasselehtinen\Issuu\Exceptions\DocumentStillConverting;
+use GuzzleHttp\TransferStats;
+use GuzzleHttp\RequestOptions;
+use GuzzleHttp\Exception\ClientException;
+use lasselehtinen\Issuu\Exceptions\PageNotFound;
 use lasselehtinen\Issuu\Exceptions\EmbedNotFound;
+use lasselehtinen\Issuu\Exceptions\InvalidApiKey;
+use lasselehtinen\Issuu\Exceptions\DocumentNotFound;
+use lasselehtinen\Issuu\Exceptions\FolderAlreadyExist;
+use lasselehtinen\Issuu\Exceptions\InvalidFieldFormat;
+use lasselehtinen\Issuu\Exceptions\InvalidTokenException;
+use lasselehtinen\Issuu\Exceptions\RequiredFieldIsMissing;
+use lasselehtinen\Issuu\Exceptions\DocumentStillConverting;
+use lasselehtinen\Issuu\Exceptions\DocumentFailedConversion;
 use lasselehtinen\Issuu\Exceptions\ExceededQuotaForMonthlyUploads;
 use lasselehtinen\Issuu\Exceptions\ExceededQuotaForUnlistedPublications;
-use lasselehtinen\Issuu\Exceptions\FolderAlreadyExist;
-use lasselehtinen\Issuu\Exceptions\InvalidApiKey;
-use lasselehtinen\Issuu\Exceptions\InvalidFieldFormat;
-use lasselehtinen\Issuu\Exceptions\PageNotFound;
-use lasselehtinen\Issuu\Exceptions\RequiredFieldIsMissing;
-use stdClass;
 
 class Issuu
 {
-    /** @var string */
-    private $apiSecret;
-
     /** @var string */
     private $apiKey;
 
     /** @var Client */
     private $client;
 
-    public function __construct(string $apiSecret, string $apiKey, Client $client = null)
+    public function __construct(string $apiKey, Client $client = null)
     {
-        $this->apiSecret = $apiSecret;
         $this->apiKey = $apiKey;
-        $this->client = $client ?: new Client();
+        $this->client = $client ?: new Client(['base_uri' => 'https://api.issuu.com/v2/']);
     }
 
     /**
-     * Create a Issuu signature for the API requests
+     * Make a request to Issuu API
      *
-     * @see http://developers.issuu.com/signing-requests/
-     * @param  array $queryParameters
-     * @return string
+     * @param string $method
+     * @param string $endpoint
+     * @param array<mixed> $queryParameters
+     * @param array<mixed> $body
+     * @return stdClass
      */
-    private function getSignature(array $queryParameters): string
+    public function getResponse(string $method, string $endpoint, array $queryParameters = [], array $body = []): stdClass
     {
-        // Sort request parameters alphabetically
-        ksort($queryParameters);
-
-        $signature = $this->apiSecret;
-
-        // Concatenate in order your API secret key and request name-value pairs (e.g. SECRETbar2baz3foo1)
-        foreach ($queryParameters as $key => $value) {
-            $signature .= $key . $value;
+        // Convert booleans to string
+        foreach ($queryParameters as $key => $queryParameter) {
+            if (is_bool($queryParameter)) {
+                $queryParameters[$key] = var_export($queryParameter, true);
+            }
         }
 
-        return md5($signature);
-    }
-
-    public function getResponse(array $queryParameters): stdClass
-    {
-        $queryParameters['apiKey'] = $this->apiKey;
-
-        // Force format to JSON
-        $queryParameters['format'] = 'json';
-
-        // Remove null/empty parameters
-        $queryParameters = array_filter($queryParameters);
-        $queryParameters['signature'] = $this->getSignature($queryParameters);
-        $response = $this->client->post('http://api.issuu.com/1_0', [
+        $response = $this->client->request($method, $endpoint, [
+            'headers' => [
+                'Authorization' => 'Bearer ' . $this->apiKey,
+            ],
             'query' => $queryParameters,
+            RequestOptions::JSON => $body,
         ]);
-        $json = json_decode($response->getBody()->getContents());
 
-        // Check for errors
+        $json = json_decode($response->getBody()->getContents(), false);
+
+        // Some endpoints return empty response, return empty stdClass in those cases
+        if ($json instanceof stdClass === false) {
+            return new stdClass();
+        }
+
         if ($this->responseHasErrors($json)) {
-            switch ($this->getErrorCode($json)) {
-                case '010':
-                    throw new InvalidApiKey();
-                    break;
-                case '200':
-                    throw new RequiredFieldIsMissing();
-                    break;
-                case '201':
-                    throw new InvalidFieldFormat();
-                    break;
-                case '300':
-                    throw new DocumentNotFound();
-                    break;
-                case '311':
-                    throw new PageNotFound();
-                    break;
-                case '294':
-                    throw new ExceededQuotaForUnlistedPublications();
-                    break;
-                case '295':
-                    throw new ExceededQuotaForMonthlyUploads();
-                    break;
-                case '307':
-                    throw new DocumentStillConverting();
-                    break;
-                case '308':
-                    throw new DocumentFailedConversion();
-                    break;
-                case '090':
-                    throw new EmbedNotFound();
-                    break;
-                case '261':
-                    throw new FolderAlreadyExist();
-                    break;
-            }
+            $this->throwException($json);
         }
 
         return $json;
@@ -116,11 +79,16 @@ class Issuu
 
     public function responseHasErrors(stdClass $json): bool
     {
-        return isset($json->rsp->_content->error);
+        return isset($json->message);
     }
 
-    public function getErrorCode(stdClass $json): string
+    public function throwException(stdClass $json): bool
     {
-        return $json->rsp->_content->error->code;
+        switch ($json->message) {
+            case 'Invalid token':
+                throw new InvalidTokenException('The given token is invalid.');
+            default:
+                throw new Exception($json->message);
+        }
     }
 }

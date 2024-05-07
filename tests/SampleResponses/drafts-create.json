@@ -1,0 +1,17 @@
+{
+    "slug": "ycx1lethynr",
+    "owner": "kirja",
+    "state": "DRAFT",
+    "location": "https://issuu.com/home/drafts/ycx1lethynr",
+    "changes": {
+      "access": "PUBLIC",
+      "description": "string",
+      "originalPublishDate": "1970-01-01T00:00:00.000Z",
+      "preview": false,
+      "title": "string",
+      "type": "editorial",
+      "downloadable": false,
+      "showDetectedLinks": false
+    },
+    "created": "2024-05-06T13:36:07.000Z"
+  }

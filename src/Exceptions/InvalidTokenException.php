@@ -4,6 +4,6 @@ namespace lasselehtinen\Issuu\Exceptions;
 
 use Exception;
 
-class DocumentFailedConversion extends Exception
+class InvalidTokenException extends Exception
 {
 }

@@ -1,0 +1,433 @@
+{
+    "results": [
+      {
+        "slug": "zp0m1zti7ir",
+        "owner": "kirja",
+        "cover": {
+          "small": {
+            "url": "https://image.isu.pub/240425135049-c6739df8b215bb921d5fd15367d0cd31/jpg/page_1_thumb_small.jpg",
+            "width": 63,
+            "height": 100
+          },
+          "medium": {
+            "url": "https://image.isu.pub/240425135049-c6739df8b215bb921d5fd15367d0cd31/jpg/page_1_thumb_medium.jpg",
+            "width": 94,
+            "height": 150
+          },
+          "large": {
+            "url": "https://image.isu.pub/240425135049-c6739df8b215bb921d5fd15367d0cd31/jpg/page_1_thumb_large.jpg",
+            "width": 301,
+            "height": 480
+          }
+        },
+        "fileInfo": {
+          "isCopyrightConfirmed": false,
+          "name": "9789520458751_lukun.pdf",
+          "size": 11009929,
+          "pageCount": 20,
+          "type": "PDF",
+          "conversionStatus": "DONE"
+        },
+        "state": "DRAFT",
+        "location": "https://issuu.com/home/drafts/zp0m1zti7ir",
+        "changes": {
+          "access": "PUBLIC",
+          "description": "<p>Saisiko olla yksi telttaretki ja lohi-herne-marmeladileipä? </p>",
+          "file": 119824977,
+          "originalPublishDate": "2024-06-10T00:00:00.000Z",
+          "preview": false,
+          "title": "Kortesuo, Katleena: Veevi ja aivopieruverkkarit (Tammi)",
+          "downloadable": true,
+          "showDetectedLinks": false
+        },
+        "created": "2024-04-25T13:50:49.000Z"
+      },
+      {
+        "slug": "odpussp4g3i",
+        "owner": "kirja",
+        "cover": {
+          "small": {
+            "url": "https://image.isu.pub/240416075630-c15aef8e5d8a4df5a8ef96964e143eea/jpg/page_1_thumb_small.jpg",
+            "width": 71,
+            "height": 100
+          },
+          "medium": {
+            "url": "https://image.isu.pub/240416075630-c15aef8e5d8a4df5a8ef96964e143eea/jpg/page_1_thumb_medium.jpg",
+            "width": 106,
+            "height": 150
+          },
+          "large": {
+            "url": "https://image.isu.pub/240416075630-c15aef8e5d8a4df5a8ef96964e143eea/jpg/page_1_thumb_large.jpg",
+            "width": 320,
+            "height": 451
+          }
+        },
+        "fileInfo": {
+          "isCopyrightConfirmed": false,
+          "name": "Johnny%20Kniga%20syksy%202024.pdf",
+          "size": 13862935,
+          "pageCount": 22,
+          "type": "PDF",
+          "conversionStatus": "DONE"
+        },
+        "state": "DRAFT",
+        "location": "https://issuu.com/home/drafts/odpussp4g3i",
+        "changes": {
+          "access": "PUBLIC",
+          "description": "Johnny Knigan syksyn 2024 kirjat.\n\n",
+          "file": 119592911,
+          "preview": false,
+          "title": "Johnny Kniga syksy 2024",
+          "downloadable": false,
+          "showDetectedLinks": false
+        },
+        "created": "2024-04-16T07:56:24.000Z"
+      },
+      {
+        "slug": "1e1w2jtoxx7",
+        "owner": "kirja",
+        "cover": {
+          "small": {
+            "url": "https://image.isu.pub/240402124133-a966e076001c128d23b9532d2a95a690/jpg/page_1_thumb_small.jpg",
+            "width": 63,
+            "height": 100
+          },
+          "medium": {
+            "url": "https://image.isu.pub/240402124133-a966e076001c128d23b9532d2a95a690/jpg/page_1_thumb_medium.jpg",
+            "width": 94,
+            "height": 150
+          },
+          "large": {
+            "url": "https://image.isu.pub/240402124133-a966e076001c128d23b9532d2a95a690/jpg/page_1_thumb_large.jpg",
+            "width": 301,
+            "height": 480
+          }
+        },
+        "fileInfo": {
+          "isCopyrightConfirmed": false,
+          "name": "9789523620322_lukun.pdf",
+          "size": 445348,
+          "pageCount": 18,
+          "type": "PDF",
+          "conversionStatus": "DONE"
+        },
+        "state": "DRAFT",
+        "location": "https://issuu.com/home/drafts/1e1w2jtoxx7",
+        "changes": {
+          "access": "PUBLIC",
+          "description": "<p>Kun rikolliset luulevat, että kukaan ei kuuntele. </p>",
+          "file": 119269397,
+          "originalPublishDate": "2024-05-14T00:00:00.000Z",
+          "preview": false,
+          "title": "Salihu, Diamant: Huumekartellit kuuntelussa (Johnny Kniga)",
+          "downloadable": true,
+          "showDetectedLinks": false
+        },
+        "created": "2024-04-02T12:41:33.000Z"
+      },
+      {
+        "slug": "3l5vvcpr785",
+        "owner": "kirja",
+        "cover": {
+          "small": {
+            "url": "https://image.isu.pub/fallback_small.jpg",
+            "width": 75,
+            "height": 100
+          },
+          "medium": {
+            "url": "https://image.isu.pub/fallback_medium.jpg",
+            "width": 113,
+            "height": 150
+          },
+          "large": {
+            "url": "https://image.isu.pub/fallback_large.jpg",
+            "width": 320,
+            "height": 426
+          }
+        },
+        "fileInfo": {
+          "isCopyrightConfirmed": false,
+          "name": "9789510500118_lukun.pdf",
+          "size": 369420,
+          "pageCount": 0,
+          "type": "PDF",
+          "conversionStatus": "DONE"
+        },
+        "state": "DRAFT",
+        "location": "https://issuu.com/home/drafts/3l5vvcpr785",
+        "changes": {
+          "access": "PUBLIC",
+          "description": "<p>Millainen on vahva nainen? </p>",
+          "file": 118408738,
+          "originalPublishDate": "2024-04-09T00:00:00.000Z",
+          "preview": false,
+          "title": "Rytkönen, Millariikka: Täysin auki (Johnny Kniga)",
+          "downloadable": true,
+          "showDetectedLinks": false
+        },
+        "created": "2024-02-26T11:10:41.000Z"
+      },
+      {
+        "slug": "b2ylh5yc1s4",
+        "owner": "kirja",
+        "cover": {
+          "small": {
+            "url": "https://image.isu.pub/240219080032-b3353d1e6339417ae364a9849846e37c/jpg/page_1_thumb_small.jpg",
+            "width": 63,
+            "height": 100
+          },
+          "medium": {
+            "url": "https://image.isu.pub/240219080032-b3353d1e6339417ae364a9849846e37c/jpg/page_1_thumb_medium.jpg",
+            "width": 94,
+            "height": 150
+          },
+          "large": {
+            "url": "https://image.isu.pub/240219080032-b3353d1e6339417ae364a9849846e37c/jpg/page_1_thumb_large.jpg",
+            "width": 301,
+            "height": 480
+          }
+        },
+        "fileInfo": {
+          "isCopyrightConfirmed": false,
+          "name": "9789522797339_lukun.pdf",
+          "size": 337409,
+          "pageCount": 20,
+          "type": "PDF",
+          "conversionStatus": "DONE"
+        },
+        "state": "DRAFT",
+        "location": "https://issuu.com/home/drafts/b2ylh5yc1s4",
+        "changes": {
+          "access": "PUBLIC",
+          "description": "<p>Valovoimainen romaani Wivi Lönnistä, lasikattojen murtajasta</p>",
+          "file": 118256068,
+          "originalPublishDate": "2021-01-26T00:00:00.000Z",
+          "preview": false,
+          "title": "Soininen, Pirkko: Valosta rakentuvat huoneet (Bazar)",
+          "downloadable": true,
+          "showDetectedLinks": false
+        },
+        "created": "2024-02-19T08:00:32.000Z"
+      },
+      {
+        "slug": "ocdo5nt6jmj",
+        "owner": "kirja",
+        "cover": {
+          "small": {
+            "url": "https://image.isu.pub/240209080045-48c7fe1ccee6e74a51dcb3fffd2da106/jpg/page_1_thumb_small.jpg",
+            "width": 67,
+            "height": 100
+          },
+          "medium": {
+            "url": "https://image.isu.pub/240209080045-48c7fe1ccee6e74a51dcb3fffd2da106/jpg/page_1_thumb_medium.jpg",
+            "width": 101,
+            "height": 150
+          },
+          "large": {
+            "url": "https://image.isu.pub/240209080045-48c7fe1ccee6e74a51dcb3fffd2da106/jpg/page_1_thumb_large.jpg",
+            "width": 320,
+            "height": 477
+          }
+        },
+        "fileInfo": {
+          "isCopyrightConfirmed": false,
+          "name": "9789510487365_lukun.pdf",
+          "size": 885026,
+          "pageCount": 21,
+          "type": "PDF",
+          "conversionStatus": "DONE"
+        },
+        "state": "DRAFT",
+        "location": "https://issuu.com/home/drafts/ocdo5nt6jmj",
+        "changes": {
+          "access": "PUBLIC",
+          "description": "<p>Kunnianhimoinen suurromaani natsi-Saksan noususta ja tuhosta. </p>",
+          "file": 118080637,
+          "originalPublishDate": "2024-03-22T00:00:00.000Z",
+          "preview": false,
+          "title": "Terho, Sampo: Stalingradin viemärit (WSOY)",
+          "downloadable": true,
+          "showDetectedLinks": false
+        },
+        "created": "2024-02-09T08:00:45.000Z"
+      },
+      {
+        "slug": "cnep0zyir1z",
+        "owner": "kirja",
+        "cover": {
+          "small": {
+            "url": "https://image.isu.pub/240131115034-0a6d4f9c9e507d47d71060ee8a75db74/jpg/page_1_thumb_small.jpg",
+            "width": 63,
+            "height": 100
+          },
+          "medium": {
+            "url": "https://image.isu.pub/240131115034-0a6d4f9c9e507d47d71060ee8a75db74/jpg/page_1_thumb_medium.jpg",
+            "width": 94,
+            "height": 150
+          },
+          "large": {
+            "url": "https://image.isu.pub/240131115034-0a6d4f9c9e507d47d71060ee8a75db74/jpg/page_1_thumb_large.jpg",
+            "width": 301,
+            "height": 480
+          }
+        },
+        "fileInfo": {
+          "isCopyrightConfirmed": false,
+          "name": "9789523827844_lukun.pdf",
+          "size": 505560,
+          "pageCount": 25,
+          "type": "PDF",
+          "conversionStatus": "DONE"
+        },
+        "state": "DRAFT",
+        "location": "https://issuu.com/home/drafts/cnep0zyir1z",
+        "changes": {
+          "access": "PUBLIC",
+          "description": "<p>Suureen kansansuosioon nousseen tiedustelueverstin ainutlaatuinen testamentti. </p>",
+          "file": 117905929,
+          "originalPublishDate": "2024-03-14T00:00:00.000Z",
+          "preview": false,
+          "title": "Halminen, Laura: Martti J. Kari (Docendo)",
+          "downloadable": true,
+          "showDetectedLinks": false
+        },
+        "created": "2024-01-31T11:50:34.000Z"
+      },
+      {
+        "slug": "ue36mx59s4w",
+        "owner": "kirja",
+        "cover": {
+          "small": {
+            "url": "https://image.isu.pub/240125132031-0b7ecbff6e630dea91081b525548f2eb/jpg/page_1_thumb_small.jpg",
+            "width": 63,
+            "height": 100
+          },
+          "medium": {
+            "url": "https://image.isu.pub/240125132031-0b7ecbff6e630dea91081b525548f2eb/jpg/page_1_thumb_medium.jpg",
+            "width": 94,
+            "height": 150
+          },
+          "large": {
+            "url": "https://image.isu.pub/240125132031-0b7ecbff6e630dea91081b525548f2eb/jpg/page_1_thumb_large.jpg",
+            "width": 301,
+            "height": 480
+          }
+        },
+        "fileInfo": {
+          "isCopyrightConfirmed": false,
+          "name": "9789522797339_lukun.pdf",
+          "size": 337409,
+          "pageCount": 20,
+          "type": "PDF",
+          "conversionStatus": "DONE"
+        },
+        "state": "DRAFT",
+        "location": "https://issuu.com/home/drafts/ue36mx59s4w",
+        "changes": {
+          "access": "PUBLIC",
+          "description": "<p>Valovoimainen romaani Wivi Lönnistä, lasikattojen murtajasta</p>",
+          "file": 117797669,
+          "originalPublishDate": "2021-01-26T00:00:00.000Z",
+          "preview": false,
+          "title": "Soininen, Pirkko: Valosta rakentuvat huoneet (Bazar)",
+          "downloadable": true,
+          "showDetectedLinks": false
+        },
+        "created": "2024-01-25T13:20:31.000Z"
+      },
+      {
+        "slug": "pvi7fbh8ydg",
+        "owner": "kirja",
+        "cover": {
+          "small": {
+            "url": "https://image.isu.pub/240108140408-fcaa446d960f5725b401d051b1c4e394/jpg/page_1_thumb_small.jpg",
+            "width": 63,
+            "height": 100
+          },
+          "medium": {
+            "url": "https://image.isu.pub/240108140408-fcaa446d960f5725b401d051b1c4e394/jpg/page_1_thumb_medium.jpg",
+            "width": 94,
+            "height": 150
+          },
+          "large": {
+            "url": "https://image.isu.pub/240108140408-fcaa446d960f5725b401d051b1c4e394/jpg/page_1_thumb_large.jpg",
+            "width": 301,
+            "height": 480
+          }
+        },
+        "fileInfo": {
+          "isCopyrightConfirmed": false,
+          "name": "9789524030670_lukun.pdf",
+          "size": 813857,
+          "pageCount": 18,
+          "type": "PDF",
+          "conversionStatus": "DONE"
+        },
+        "state": "DRAFT",
+        "location": "https://issuu.com/home/drafts/pvi7fbh8ydg",
+        "changes": {
+          "access": "PUBLIC",
+          "description": "<p>Nämä koirat ovat haistaneet veren</p>",
+          "file": 117483350,
+          "originalPublishDate": "2024-02-22T00:00:00.000Z",
+          "preview": false,
+          "title": "Jones, Dan: Essexin koirat (Bazar)",
+          "downloadable": true,
+          "showDetectedLinks": false
+        },
+        "created": "2024-01-08T14:04:08.000Z"
+      },
+      {
+        "slug": "luppz7q7kkr",
+        "owner": "kirja",
+        "cover": {
+          "small": {
+            "url": "https://image.isu.pub/231130105406-b8e40384b66a4390e43639f47b214309/jpg/page_1_thumb_small.jpg",
+            "width": 67,
+            "height": 100
+          },
+          "medium": {
+            "url": "https://image.isu.pub/231130105406-b8e40384b66a4390e43639f47b214309/jpg/page_1_thumb_medium.jpg",
+            "width": 100,
+            "height": 150
+          },
+          "large": {
+            "url": "https://image.isu.pub/231130105406-b8e40384b66a4390e43639f47b214309/jpg/page_1_thumb_large.jpg",
+            "width": 319,
+            "height": 480
+          }
+        },
+        "fileInfo": {
+          "isCopyrightConfirmed": false,
+          "name": "9789510302996_lukun.pdf",
+          "size": 1237575,
+          "pageCount": 22,
+          "type": "PDF",
+          "conversionStatus": "DONE"
+        },
+        "state": "DRAFT",
+        "location": "https://issuu.com/home/drafts/luppz7q7kkr",
+        "changes": {
+          "access": "PUBLIC",
+          "description": "<p>Shakespearen varhaiskauden komedia, jota ei ole suomennettu sitten Paavo Cajanderin.</p>",
+          "file": 116843221,
+          "originalPublishDate": "2005-06-01T00:00:00.000Z",
+          "preview": false,
+          "title": "Shakespeare, William: Kaksi nuorta veronalaista (WSOY)",
+          "downloadable": true,
+          "showDetectedLinks": false
+        },
+        "created": "2023-11-30T10:54:06.000Z"
+      }
+    ],
+    "links": {
+      "self": {
+        "href": "https://api.issuu.com/v2/drafts"
+      },
+      "next": {
+        "href": "https://api.issuu.com/v2/drafts?size=10&page=2"
+      }
+    },
+    "pageSize": 10,
+    "count": 16
+  }
