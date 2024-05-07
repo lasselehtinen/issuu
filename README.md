@@ -89,9 +89,8 @@ $drafts->publishDraftBySlug($createDraft->slug);
 // Try few times until the file is converted
 for ($i=0; $i < 10; $i++) {
     $draft = $drafts->getDraftBySlug($createDraft->slug);
-    $conversionStatus =  $draft->fileInfo->conversionStatus;
     
-    if ($conversionStatus === 'DONE') {
+    if ($draft->fileInfo->conversionStatus === 'DONE') {
         break;
     }
 
