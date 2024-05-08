@@ -38,4 +38,40 @@ class Stacks
 
         return $this->issuu->getResponse(method: 'GET', endpoint: 'stacks', queryParameters: $queryParameters);
     }
+
+    /**
+     * Create a new Stack
+     * @see https://api.issuu.com/v2/reference/#post-/stacks
+     * @param array<mixed>    $body        Stack data to create.
+     * @return stdClass
+     */
+    public function create(
+        array $body = [],
+    ): stdClass {
+        return $this->issuu->getResponse(method: 'POST', endpoint: 'stacks', body: $body);
+    }
+
+    /**
+     * Get Stack data by ID
+     * @see https://api.issuu.com/v2/reference/#get-/stacks/-stackId-
+     * @param string    $id         The unique identifier of the stack to retrieve.
+     * @return stdClass
+     */
+    public function getStackDataById(
+        string $id,
+    ): stdClass {
+        return $this->issuu->getResponse(method: 'GET', endpoint: 'stacks/'.$id);
+    }
+
+    /**
+     * Delete a Stack by ID
+     * @see https://api.issuu.com/v2/reference/#delete-/stacks/-stackId-
+     * @param string    $id         The unique identifier of the stack to delete.
+     * @return stdClass
+     */
+    public function deleteStackById(
+        string $id,
+    ): stdClass {
+        return $this->issuu->getResponse(method: 'DELETE', endpoint: 'stacks/'.$id);
+    }
 }

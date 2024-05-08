@@ -67,7 +67,13 @@ class Issuu
 
         // Some endpoints return empty response, return empty stdClass in those cases
         if ($json instanceof stdClass === false) {
-            return new stdClass();
+            $response = new stdClass();
+
+            if (!empty($json)) {
+                $response->content = $json;
+            }
+
+            return $response;
         }
 
         if ($this->responseHasErrors($json)) {

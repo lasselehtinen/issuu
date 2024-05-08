@@ -39,9 +39,9 @@ composer require lasselehtinen/issuu
 | Endpoint                              | Supported |
 |---------------------------------------|-----------|
 | List Stacks                           | Yes       |
-| Create a new Stack                    | No        |
-| Get Stack data by ID                  | No        |
-| Delete a Stack by ID                  | No        |
+| Create a new Stack                    | Yes       |
+| Get Stack data by ID                  | Yes       |
+| Delete a Stack by ID                  | Yes       |
 | Update Stack data by ID               | No        |
 | Get Stack Items slug                  | No        |
 | Add Stack Item by slug to stack       | No        |
@@ -84,7 +84,6 @@ $body = [
 ];
 
 $createDraft = $drafts->create($body);
-$drafts->publishDraftBySlug($createDraft->slug);
 
 // Try few times until the file is converted
 for ($i=0; $i < 10; $i++) {
