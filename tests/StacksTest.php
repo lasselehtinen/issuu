@@ -75,11 +75,11 @@ class StacksTest extends TestCase
         
         // Get Stack by id
         $stackData = $stacks->getStackDataById($stacksList->results[0]->id);
-        $this->assertObjectHasProperty('id', $stackData);
+        $this->assertTrue(property_exists($stackData, 'id'));
         $this->assertSame($stacksList->results[0]->id, $stackData->id);
-        $this->assertObjectHasProperty('title', $stackData);
-        $this->assertObjectHasProperty('description', $stackData);
-        $this->assertObjectHasProperty('accessType', $stackData);
+        $this->assertTrue(property_exists($stackData, 'title'));
+        $this->assertTrue(property_exists($stackData, 'description'));
+        $this->assertTrue(property_exists($stackData, 'accessType'));
     }
 
     /**
