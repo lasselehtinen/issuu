@@ -25,11 +25,8 @@ class Drafts
      * @param  string  $q           A regular expression that is applied to the titles and descriptions of the drafts and returns only the drafts that match the expression
      * @return stdClass
      */
-    public function list(
-        int $size = 10,
-        int $page = 1,
-        string $q = '',
-    ): stdClass {
+    public function list(int $size = 10, int $page = 1, string $q = '',): stdClass
+    {
         $queryParameters = [
             'size' => $size,
             'page' => $page,
@@ -45,9 +42,8 @@ class Drafts
      * @param array<mixed>    $body        The data to create the draft with.
      * @return stdClass
      */
-    public function create(
-        array $body = [],
-    ): stdClass {
+    public function create(array $body = []): stdClass
+    {
         return $this->issuu->getResponse(method: 'POST', endpoint: 'drafts', body: $body);
     }
 
@@ -57,9 +53,8 @@ class Drafts
      * @param  string   $slug        The unique identifier of the draft to retrieve. This should be a string that corresponds to the slug of a draft.
      * @return stdClass
      */
-    public function getDraftBySlug(
-        string $slug,
-    ): stdClass {
+    public function getDraftBySlug(string $slug): stdClass
+    {
         return $this->issuu->getResponse(method: 'GET', endpoint: 'drafts/'.$slug);
     }
 
@@ -70,10 +65,8 @@ class Drafts
      * @param  array<mixed> $body        The data to publish the draft with.
      * @return stdClass
      */
-    public function publishDraftBySlug(
-        string $slug,
-        array $body,
-    ): stdClass {
+    public function publishDraftBySlug(string $slug, array $body): stdClass
+    {
         return $this->issuu->getResponse(method: 'POST', endpoint: 'drafts/'.$slug.'/publish', body: $body);
     }
 
@@ -83,9 +76,8 @@ class Drafts
      * @param  string   $slug        The unique identifier of the draft to delete. This should be a string that corresponds to the slug of a draft.
      * @return null
      */
-    public function deleteDraftBySlug(
-        string $slug,
-    ): null {
+    public function deleteDraftBySlug(string $slug): null
+    {
         $this->issuu->getResponse(method: 'DELETE', endpoint: 'drafts/'.$slug);
         return null;
     }
@@ -97,10 +89,8 @@ class Drafts
      * @param  array<mixed>     $body        The data to update the draft with.
      * @return stdClass
      */
-    public function updateDraftBySlug(
-        string $slug,
-        array $body = [],
-    ): stdClass {
+    public function updateDraftBySlug(string $slug, array $body = []): stdClass
+    {
         return $this->issuu->getResponse(method: 'PATCH', endpoint: 'drafts/'.$slug, body: $body);
     }
 }

@@ -25,11 +25,8 @@ class Stacks
      * @param  bool    $showUnlisted    Include unlisted stacks in the list of stacks.
      * @return stdClass
      */
-    public function list(
-        int $size = 10,
-        int $page = 1,
-        bool $showUnlisted = false,
-    ): stdClass {
+    public function list(int $size = 10, int $page = 1, bool $showUnlisted = false): stdClass
+    {
         $queryParameters = [
             'size' => $size,
             'page' => $page,
@@ -45,9 +42,8 @@ class Stacks
      * @param array<mixed>    $body        Stack data to create.
      * @return stdClass
      */
-    public function create(
-        array $body = [],
-    ): stdClass {
+    public function create(array $body = []): stdClass
+    {
         return $this->issuu->getResponse(method: 'POST', endpoint: 'stacks', body: $body);
     }
 
@@ -57,9 +53,8 @@ class Stacks
      * @param string    $id         The unique identifier of the stack to retrieve.
      * @return stdClass
      */
-    public function getStackDataById(
-        string $id,
-    ): stdClass {
+    public function getStackDataById(string $id): stdClass
+    {
         return $this->issuu->getResponse(method: 'GET', endpoint: 'stacks/'.$id);
     }
 
@@ -69,9 +64,8 @@ class Stacks
      * @param string    $id         The unique identifier of the stack to delete.
      * @return stdClass
      */
-    public function deleteStackById(
-        string $id,
-    ): stdClass {
+    public function deleteStackById(string $id): stdClass
+    {
         return $this->issuu->getResponse(method: 'DELETE', endpoint: 'stacks/'.$id);
     }
 }
