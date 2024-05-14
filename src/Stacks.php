@@ -68,4 +68,18 @@ class Stacks
     {
         return $this->issuu->getResponse(method: 'DELETE', endpoint: 'stacks/'.$id);
     }
+
+    /**
+     * Get Stack Items slug
+     * @see https://api.issuu.com/v2/reference/#get-/stacks/-stackId-/items
+     * @param  string   $id         The unique identifier of the stack to retrieve.
+     * @param  int      $size            Determines the number of stacks to return per page.
+     * @param  int      $page            Specifies the page number to return.
+     * @param  bool     $includeUnlisted    Include unlisted stacks in the list of stacks.
+     * @return stdClass
+     */
+    public function getStackItemsSlug(string $id, bool $includeUnlisted = true, int $size = 10, int $page = 1): stdClass
+    {
+        return $this->issuu->getResponse(method: 'GET', endpoint: 'stacks/'.$id.'/items');
+    }
 }

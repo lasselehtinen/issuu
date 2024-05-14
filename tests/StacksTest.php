@@ -132,4 +132,29 @@ class StacksTest extends TestCase
         $this->expectException(\GuzzleHttp\Exception\ClientException::class);
         $stacks->getStackDataById($stackCreate->content);
     }
+
+    /**
+     * Test getting Stack items
+     *
+     * @return void
+     */
+    public function testGettingStackItems()
+    {
+        $stacks = new Stacks($this->issuu);
+
+        $body = [
+            'accessType' => 'UNLISTED',
+            'description' => 'Test stack',
+            'title' => 'Test stack',
+        ];
+
+        $stackCreate = $stacks->create($body);
+        $this->assertIsObject($stackCreate);
+        $this->assertIsString($stackCreate->content);
+
+        $stackItems = $stacks->getStackItemsSlug($stackCreate->content);
+
+        $this->assertIsObject($stackItems);
+        $this->assertIsArray($stackItems->results);
+    }
 }
