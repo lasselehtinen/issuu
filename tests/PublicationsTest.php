@@ -1,6 +1,7 @@
 <?php
 namespace lasselehtinen\Issuu\Test;
 
+use Exception;
 use Tests\TestCase;
 use lasselehtinen\Issuu\Issuu;
 use lasselehtinen\Issuu\Drafts;
@@ -10,6 +11,29 @@ use lasselehtinen\Issuu\Exceptions\FileDoesNotExist;
 
 class PublicationsTest extends TestCase
 {
+    /**
+     * Clean up generated Publications
+     *
+     * @return void
+     */
+    public static function tearDownAfterClass(): void
+    {
+        $issuuApiKey = getenv('ISSUU_API_KEY');
+
+        if (empty($issuuApiKey)) {
+            throw new Exception('Could not fetch Issuu API key from env variable.');
+        }
+
+        $issuu = new Issuu($issuuApiKey);
+        
+        $publications = new Publications($issuu);
+        $publicationsList = $publications->list(q: 'Test document', size: 50);
+
+        foreach ($publicationsList->results as $result) {
+            $publications->deletePublicationBySlug($result->slug);
+        }
+    }
+
     /**
      * Test getting list of publications
      * @return void

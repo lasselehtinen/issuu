@@ -1,12 +1,36 @@
 <?php
 namespace lasselehtinen\Issuu\Test;
 
+use Exception;
 use Tests\TestCase;
 use lasselehtinen\Issuu\Issuu;
 use lasselehtinen\Issuu\Drafts;
 
 class DraftsTest extends TestCase
 {
+    /**
+     * Clean up generated Drafts
+     *
+     * @return void
+     */
+    public static function tearDownAfterClass(): void
+    {
+        $issuuApiKey = getenv('ISSUU_API_KEY');
+
+        if (empty($issuuApiKey)) {
+            throw new Exception('Could not fetch Issuu API key from env variable.');
+        }
+
+        $issuu = new Issuu($issuuApiKey);
+
+        $drafts = new Drafts($issuu);
+        $draftsList = $drafts->list(q: 'Test document', size: 50);
+        
+        foreach ($draftsList->results as $result) {
+            $drafts->deleteDraftBySlug($result->slug);
+        }
+    }
+    
     /**
      * Test getting list of drafts
      * @return void

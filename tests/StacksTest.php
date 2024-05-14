@@ -1,12 +1,38 @@
 <?php
 namespace lasselehtinen\Issuu\Test;
 
+use Exception;
 use Tests\TestCase;
 use lasselehtinen\Issuu\Issuu;
 use lasselehtinen\Issuu\Stacks;
 
 class StacksTest extends TestCase
 {
+    /**
+     * Clean up generated Stacks
+     *
+     * @return void
+     */
+    public static function tearDownAfterClass(): void
+    {
+        $issuuApiKey = getenv('ISSUU_API_KEY');
+
+        if (empty($issuuApiKey)) {
+            throw new Exception('Could not fetch Issuu API key from env variable.');
+        }
+
+        $issuu = new Issuu($issuuApiKey);
+        
+        $stacks = new Stacks($issuu);
+        $stacksList = $stacks->list(size: 100, showUnlisted: true);
+
+        foreach ($stacksList->results as $result) {
+            if ($result->title === 'Test stack') {
+                $stacks->deleteStackById($result->id);
+            }
+        }
+    }
+
     /**
      * Test getting list of stacks
      * @return void
