@@ -8,6 +8,7 @@ use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
 use lasselehtinen\Issuu\Issuu;
 use lasselehtinen\Issuu\Drafts;
+use lasselehtinen\Issuu\Stacks;
 use GuzzleHttp\Handler\MockHandler;
 use lasselehtinen\Issuu\Publications;
 use PHPUnit\Framework\TestCase as BaseTestCase;
@@ -40,11 +41,11 @@ abstract class TestCase extends BaseTestCase
     }
 
     /**
-     * Clean up generated Drafts and Publications
+     * Clean up generated Drafts, Publications and Stacks
      *
      * @return void
      */
-    public static function tearDownAfterClass(): void
+    public function tearDown(): void
     {
         $issuuApiKey = getenv('ISSUU_API_KEY');
 
@@ -68,6 +69,16 @@ abstract class TestCase extends BaseTestCase
 
         foreach ($publicationsList->results as $result) {
             $publications->deletePublicationBySlug($result->slug);
+        }
+
+        // Remove test Stacks
+        $stacks = new Stacks($issuu);
+        $stacksList = $stacks->list(size: 100, showUnlisted: true);
+
+        foreach ($stacksList->results as $result) {
+            if ($result->title === 'Test stack') {
+                $stacks->deleteStackById($result->id);
+            }
         }
     }
 }
