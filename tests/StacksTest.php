@@ -4,6 +4,7 @@ namespace lasselehtinen\Issuu\Test;
 use Exception;
 use Tests\TestCase;
 use lasselehtinen\Issuu\Issuu;
+use lasselehtinen\Issuu\Drafts;
 use lasselehtinen\Issuu\Stacks;
 
 class StacksTest extends TestCase
@@ -156,5 +157,70 @@ class StacksTest extends TestCase
 
         $this->assertIsObject($stackItems);
         $this->assertIsArray($stackItems->results);
+    }
+
+    /**
+     * Test adding Publications to Stack by slug
+     *
+     * @return void
+     */
+    public function testAddingPublicationsToStackBySlug()
+    {
+        // Create Draft and publish it as Publication
+        $drafts = new Drafts($this->issuu);
+
+        $body = [
+            'confirmCopyright' => true,
+            'fileUrl' => 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
+            'info' => [
+                'file' => 0,
+                'access' => 'PUBLIC',
+                'title' => 'Test document',
+                'description' => 'Description',
+                'preview' => false,
+                'type' => 'editorial',
+                'showDetectedLinks' => false,
+                'downloadable' => false,
+                'originalPublishDate' => '1970-01-01T00:00:00.000Z',
+            ],
+        ];
+
+        $createDraft = $drafts->create($body);
+
+        // Try few times until the file is converted
+        for ($i=0; $i < 10; $i++) {
+            $draft = $drafts->getDraftBySlug($createDraft->slug);
+            $conversionStatus =  $draft->fileInfo->conversionStatus;
+            
+            if ($conversionStatus === 'DONE') {
+                break;
+            }
+
+            sleep(2);
+        }
+
+        $publishDraftBySlug = $drafts->publishDraftBySlug($createDraft->slug, ['desiredName' => 'foobar']);
+
+        // Create Stack
+        $stacks = new Stacks($this->issuu);
+        $stackCreate = $stacks->create(['accessType' => 'UNLISTED', 'description' => 'Test stack', 'title' => 'Test stack']);
+
+        // Add slug to Stack
+        $stacks->addStackItemBySlugToStack($stackCreate->content, ['slug' => $createDraft->slug]);
+
+        // Try few times until publication is added to the Stack
+        for ($i=0; $i < 10; $i++) {
+            $stackItems = $stacks->getStackItemsSlug($stackCreate->content);
+
+            if (count($stackItems->results) > 0) {
+                break;
+            }
+
+            sleep(5);
+        }
+
+        $this->assertIsObject($stackItems);
+        $this->assertIsArray($stackItems->results);
+        $this->assertCount(1, $stackItems->results);
     }
 }

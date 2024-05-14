@@ -44,7 +44,7 @@ composer require lasselehtinen/issuu
 | Delete a Stack by ID                  | Yes       |
 | Update Stack data by ID               | No        |
 | Get Stack Items slug                  | Yes       |
-| Add Stack Item by slug to stack       | No        |
+| Add Stack Item by slug to stack       | Yes       |
 | Delete Stack Item by slug from stack  | No        |
 
 # Stats

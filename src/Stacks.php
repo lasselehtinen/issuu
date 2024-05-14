@@ -82,4 +82,16 @@ class Stacks
     {
         return $this->issuu->getResponse(method: 'GET', endpoint: 'stacks/'.$id.'/items');
     }
+
+    /**
+     * Add Stack Item by slug to stack
+     * @see https://api.issuu.com/v2/reference/#post-/stacks/-stackId-/items
+     * @param  string         $id         The unique identifier of the stack to add the document to.
+     * @param array<mixed>    $body        Stack data to create.
+     * @return stdClass
+     */
+    public function addStackItemBySlugToStack(string $id, array $body = []): stdClass
+    {
+        return $this->issuu->getResponse(method: 'POST', endpoint: 'stacks/'.$id.'/items', body: $body);
+    }
 }
