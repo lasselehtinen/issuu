@@ -29,11 +29,11 @@ composer require lasselehtinen/issuu
 | List Publications                        | Yes       |
 | Get Publication by slug                  | Yes       |
 | Delete Publication by slug               | Yes       |
-| Get Publication assets by slug           | No        |
+| Get Publication assets by slug           | Yes       |
 | Get Publication Fullscreen share by slug | No        |
 | Get Publication Reader Share URL by slug | No        |
 | Get Publication QRCode share by slug     | No        |
-| Get Publication Embed code by slug       | No        |
+| Get Publication Embed code by slug       | Yes       |
 
 # Stacks
 | Endpoint                              | Supported |
