@@ -46,7 +46,7 @@ class DraftsTest extends TestCase
 
         // Additional checks
         $this->assertIsArray($draftsList->results);
-        $this->assertIsString($draftsList->results[0]->slug);
+        $this->assertIsString($draftsList->results[0]->slug); /* @phpstan-ignore property.nonObject */
     }
 
     /**

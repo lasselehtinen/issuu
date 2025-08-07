@@ -50,7 +50,7 @@ class PublicationsTest extends TestCase
         // Additional checks
         $this->assertIsArray($publicationsList->results);
         $this->assertCount(10, $publicationsList->results);
-        $this->assertIsString($publicationsList->results[0]->state);
+        $this->assertIsString($publicationsList->results[0]->state);  /* @phpstan-ignore property.nonObject */
     }
 
     /**

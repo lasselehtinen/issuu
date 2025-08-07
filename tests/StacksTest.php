@@ -50,7 +50,7 @@ class StacksTest extends TestCase
         // Additional checks
         $this->assertIsArray($stacksList->results);
         $this->assertCount(10, $stacksList->results);
-        $this->assertIsString($stacksList->results[0]->id);
+        $this->assertIsString($stacksList->results[0]->id); /* @phpstan-ignore property.nonObject */
     }
 
     /**
@@ -95,12 +95,12 @@ class StacksTest extends TestCase
         // Additional checks
         $this->assertIsArray($stacksList->results);
         $this->assertCount(1, $stacksList->results);
-        $this->assertIsString($stacksList->results[0]->id);
+        $this->assertIsString($stacksList->results[0]->id); /* @phpstan-ignore property.nonObject */
         
         // Get Stack by id
-        $stackData = $stacks->getStackDataById($stacksList->results[0]->id);
+        $stackData = $stacks->getStackDataById($stacksList->results[0]->id); /* @phpstan-ignore property.nonObject */
         $this->assertTrue(property_exists($stackData, 'id'));
-        $this->assertSame($stacksList->results[0]->id, $stackData->id);
+        $this->assertSame($stacksList->results[0]->id, $stackData->id); /* @phpstan-ignore property.nonObject */
         $this->assertTrue(property_exists($stackData, 'title'));
         $this->assertTrue(property_exists($stackData, 'description'));
         $this->assertTrue(property_exists($stackData, 'accessType'));
