@@ -29,6 +29,7 @@ grumphp:
             level: 9
             ignore_patterns:
                 - "vendor*"
+                - "tests*"
             triggered_by: ['php']
             memory_limit: "-1"
         phpcs:
