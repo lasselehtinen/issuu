@@ -43,8 +43,6 @@ class StacksTest extends TestCase
         $stacks = new Stacks($this->issuu);
         $stacksList = $stacks->list();
 
-        $this->assertIsObject($stacksList);
-
         // Pagination attributes
         $this->assertIsInt($stacksList->count);
         $this->assertSame(10, $stacksList->pageSize);
@@ -52,7 +50,7 @@ class StacksTest extends TestCase
         // Additional checks
         $this->assertIsArray($stacksList->results);
         $this->assertCount(10, $stacksList->results);
-        $this->assertIsString($stacksList->results[0]->id);
+        $this->assertIsString($stacksList->results[0]->id); /* @phpstan-ignore property.nonObject */
     }
 
     /**
@@ -73,7 +71,6 @@ class StacksTest extends TestCase
         ];
 
         $stackCreate = $stacks->create($body);
-        $this->assertIsObject($stackCreate);
         $this->assertIsString($stackCreate->content);
 
         // List Stacks again, count should have increased by one
@@ -98,12 +95,12 @@ class StacksTest extends TestCase
         // Additional checks
         $this->assertIsArray($stacksList->results);
         $this->assertCount(1, $stacksList->results);
-        $this->assertIsString($stacksList->results[0]->id);
+        $this->assertIsString($stacksList->results[0]->id); /* @phpstan-ignore property.nonObject */
         
         // Get Stack by id
-        $stackData = $stacks->getStackDataById($stacksList->results[0]->id);
+        $stackData = $stacks->getStackDataById($stacksList->results[0]->id); /* @phpstan-ignore property.nonObject */
         $this->assertTrue(property_exists($stackData, 'id'));
-        $this->assertSame($stacksList->results[0]->id, $stackData->id);
+        $this->assertSame($stacksList->results[0]->id, $stackData->id); /* @phpstan-ignore property.nonObject */
         $this->assertTrue(property_exists($stackData, 'title'));
         $this->assertTrue(property_exists($stackData, 'description'));
         $this->assertTrue(property_exists($stackData, 'accessType'));
@@ -124,7 +121,6 @@ class StacksTest extends TestCase
 
         $stacks = new Stacks($this->issuu);
         $stackCreate = $stacks->create($body);
-        $this->assertIsObject($stackCreate);
         $this->assertIsString($stackCreate->content);
 
         $stacks->deleteStackById($stackCreate->content);
@@ -150,12 +146,10 @@ class StacksTest extends TestCase
         ];
 
         $stackCreate = $stacks->create($body);
-        $this->assertIsObject($stackCreate);
         $this->assertIsString($stackCreate->content);
 
         $stackItems = $stacks->getStackItemsSlug($stackCreate->content);
 
-        $this->assertIsObject($stackItems);
         $this->assertIsArray($stackItems->results);
     }
 
@@ -219,7 +213,6 @@ class StacksTest extends TestCase
             sleep(5);
         }
 
-        $this->assertIsObject($stackItems);
         $this->assertIsArray($stackItems->results);
         $this->assertCount(1, $stackItems->results);
     }

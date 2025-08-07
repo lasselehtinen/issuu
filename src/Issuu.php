@@ -31,7 +31,7 @@ class Issuu
     /** @var Client */
     private $client;
 
-    public function __construct(string $apiKey, Client $client = null)
+    public function __construct(string $apiKey, ?Client $client = null)
     {
         $this->apiKey = $apiKey;
         $this->client = $client ?: new Client(['base_uri' => 'https://api.issuu.com/v2/']);

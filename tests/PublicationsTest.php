@@ -43,8 +43,6 @@ class PublicationsTest extends TestCase
         $publications = new Publications($this->issuu);
         $publicationsList = $publications->list();
 
-        $this->assertIsObject($publicationsList);
-
         // Pagination attributes
         $this->assertIsInt($publicationsList->count);
         $this->assertSame(10, $publicationsList->pageSize);
@@ -52,7 +50,7 @@ class PublicationsTest extends TestCase
         // Additional checks
         $this->assertIsArray($publicationsList->results);
         $this->assertCount(10, $publicationsList->results);
-        $this->assertIsString($publicationsList->results[0]->state);
+        $this->assertIsString($publicationsList->results[0]->state); /* @phpstan-ignore property.nonObject */
     }
 
     /**
@@ -67,7 +65,6 @@ class PublicationsTest extends TestCase
         $publications = new Publications($this->issuu);
     
         $getPublicationBySlug = $publications->getPublicationBySlug($slug);
-        $this->assertIsObject($getPublicationBySlug);
         $this->assertIsString($getPublicationBySlug->slug);
         $this->assertSame($slug, $getPublicationBySlug->slug);
     }
@@ -85,7 +82,6 @@ class PublicationsTest extends TestCase
         
         // Publication should still exist
         $getPublicationBySlug = $publications->getPublicationBySlug($slug);
-        $this->assertIsObject($getPublicationBySlug);
         $this->assertIsString($getPublicationBySlug->slug);
         $this->assertSame($slug, $getPublicationBySlug->slug);
 

@@ -40,15 +40,13 @@ class DraftsTest extends TestCase
         $drafts = new Drafts($this->issuu);
         $draftsList = $drafts->list();
 
-        $this->assertIsObject($draftsList);
-
         // Pagination attributes
         $this->assertIsInt($draftsList->count);
         $this->assertIsInt($draftsList->pageSize);
 
         // Additional checks
         $this->assertIsArray($draftsList->results);
-        $this->assertIsString($draftsList->results[0]->slug);
+        $this->assertIsString($draftsList->results[0]->slug); /* @phpstan-ignore property.nonObject */
     }
 
     /**
@@ -78,7 +76,6 @@ class DraftsTest extends TestCase
 
         $createDraft = $drafts->create($body);
 
-        $this->assertIsObject($createDraft);
         $this->assertIsString($createDraft->slug);
     }
 
@@ -93,7 +90,6 @@ class DraftsTest extends TestCase
 
         $getDraftBySlug = $drafts->getDraftBySlug('zp0m1zti7ir');
 
-        $this->assertIsObject($getDraftBySlug);
         $this->assertIsString($getDraftBySlug->slug);
         $this->assertSame('zp0m1zti7ir', $getDraftBySlug->slug);
     }
@@ -138,7 +134,6 @@ class DraftsTest extends TestCase
         }
 
         $publishDraftBySlug = $drafts->publishDraftBySlug($createDraft->slug, ['desiredName' => 'foobar']);
-        $this->assertIsObject($publishDraftBySlug);
         $this->assertIsString($publishDraftBySlug->location);
         $this->assertIsString($publishDraftBySlug->publicLocation);
     }
@@ -171,7 +166,7 @@ class DraftsTest extends TestCase
         // Create draft
         $createDraft = $drafts->create($body);
         $getDraftBySlug = $drafts->getDraftBySlug($createDraft->slug);
-        $this->assertIsObject($getDraftBySlug);
+
         $this->assertIsString($getDraftBySlug->slug);
         
         // Delete draft by slug
@@ -208,7 +203,7 @@ class DraftsTest extends TestCase
         ];
 
         $createDraft = $drafts->create($body);
-        $this->assertIsObject($createDraft);
+
         $this->assertIsString($createDraft->slug);
 
         // Check before and after update
